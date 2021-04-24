@@ -122,6 +122,17 @@
 <span class="co">#&gt; 8     0    0    8 435.30 346.51 16.06 0.69 11.04  0    6.60     5.25 0.80 NA</span>
 <span class="co">#&gt; 9     0    0    9 437.02 348.52 16.46 0.71 11.74  0    6.62     5.28 0.80 NA</span>
 <span class="co">#&gt; 10    0    0   10 438.74 350.53 16.85 0.74 12.44  0    6.65     5.31 0.80 NA</span>
+<span class="co">#&gt;     CHO   FO</span>
+<span class="co">#&gt; 1    NA   NA</span>
+<span class="co">#&gt; 2    NA   NA</span>
+<span class="co">#&gt; 3    NA   NA</span>
+<span class="co">#&gt; 4  0.20 0.13</span>
+<span class="co">#&gt; 5  0.19 0.13</span>
+<span class="co">#&gt; 6  0.19 0.14</span>
+<span class="co">#&gt; 7  0.18 0.15</span>
+<span class="co">#&gt; 8  0.18 0.15</span>
+<span class="co">#&gt; 9  0.19 0.15</span>
+<span class="co">#&gt; 10 0.19 0.15</span>
 <span class="co">#&gt; ... with 2999 more rows</span></code></pre></div>
 <p><code><a href="../reference/spiro.html">spiro()</a></code> will return interpolated data for the following parameters:</p>
 <ul>
@@ -151,6 +162,10 @@
 <strong>RER</strong>: respiratory quotient</li>
 <li>
 <strong>RE</strong>: running economy (ml/kg/km), if applicable</li>
+<li>
+<strong>CHO</strong>: rate of carbohydrate oxidation (g/min)</li>
+<li>
+<strong>FO</strong>: rate of fat oxidation (g/min)</li>
 </ul>
 </div>
 <div id="spiro-under-the-hood" class="section level2">
@@ -278,6 +293,17 @@
 <span class="co">#&gt; 8     0    0    8 435.30 346.51 16.06 0.69 11.04  0    6.60     5.25 0.80 NA</span>
 <span class="co">#&gt; 9     0    0    9 437.02 348.52 16.46 0.71 11.74  0    6.62     5.28 0.80 NA</span>
 <span class="co">#&gt; 10    0    0   10 438.74 350.53 16.85 0.74 12.44  0    6.65     5.31 0.80 NA</span>
+<span class="co">#&gt;     CHO   FO</span>
+<span class="co">#&gt; 1    NA   NA</span>
+<span class="co">#&gt; 2    NA   NA</span>
+<span class="co">#&gt; 3    NA   NA</span>
+<span class="co">#&gt; 4  0.20 0.13</span>
+<span class="co">#&gt; 5  0.19 0.13</span>
+<span class="co">#&gt; 6  0.19 0.14</span>
+<span class="co">#&gt; 7  0.18 0.15</span>
+<span class="co">#&gt; 8  0.18 0.15</span>
+<span class="co">#&gt; 9  0.19 0.15</span>
+<span class="co">#&gt; 10 0.19 0.15</span>
 <span class="co">#&gt; ... with 2999 more rows</span></code></pre></div>
 <p>For calculating parameters relative to body weight, <code><a href="../reference/spiro_add.html">spiro_add()</a></code> will use the weight found in the original data file’s meta data. If for some reason no or the wrong weight was present in the raw data file, <code>weight</code> can be manually supplied.</p>
 </div>
