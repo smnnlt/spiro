@@ -156,8 +156,8 @@
 <p>For some types of exercise tests it may be preferable to get an overall instead of a stepwise summary of parameters. <code><a href="../reference/spiro_glance.html">spiro_glance()</a></code> will usually show the maximal values within the test after applying a smoothing by the use of a rolling average.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/spiro_glance.html">spiro_glance</a></span><span class="op">(</span><span class="va">gxt_data</span>, interval <span class="op">=</span> <span class="fl">30</span><span class="op">)</span>
-<span class="co">#&gt;   VO2max_abs VO2max_rel RER_max</span>
-<span class="co">#&gt; 1    4732.28       71.7    1.15</span></code></pre></div>
+<span class="co">#&gt;   VO2peak_abs VO2peak_rel RER_peak</span>
+<span class="co">#&gt; 1     4732.28        71.7     1.15</span></code></pre></div>
 <p>In this case, the <code>interval</code> argument will set the length over which the rolling average will be computed.</p>
 <p>For constant load tests <code><a href="../reference/spiro_glance.html">spiro_glance()</a></code> will behave different, as not the maximal values, but the overall average is usually useful to calculate. Therefore the mean parameter values for all steps of the constant load will be displayed.</p>
 </div>
