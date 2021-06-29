@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
+    <span class="fa fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -138,7 +138,7 @@
 <span class="co">#&gt; 8            7  4.4  88.36 3724.37 3383.64 0.91   56.43 213.75 3.50 0.56</span>
 <span class="co">#&gt; 9            8  4.8 106.44 4223.82 3993.55 0.95   64.00 222.21 4.68 0.37</span>
 <span class="co">#&gt; 10           9  5.2 127.54 4573.91 4488.36 0.98   69.30 222.12 5.82 0.12</span></code></pre></div>
-<p>The length of the computational interval in seconds can be modified by setting the <code>interval</code> argument. If the interval exceed the length of any step, it will be shortened in these cases and a note will be displayed.</p>
+<p>The length of the computational interval (in seconds) can be modified by setting the <code>interval</code> argument. If the interval exceed the length of any step in any case, it will be shortened displaying a note.</p>
 </div>
 <div id="overall-summary-with-spiro_glance" class="section level2">
 <h2 class="hasAnchor">
@@ -151,17 +151,17 @@
 <span class="co">#&gt; and only the first element will be used</span>
 <span class="co">#&gt;   VO2peak_abs VO2peak_rel RER_peak</span>
 <span class="co">#&gt; 1     4732.28        71.7     1.15</span></code></pre></div>
-<p>In this case, the <code>interval</code> argument will set the length over which the rolling average will be computed.</p>
-<p>For constant load tests <code><a href="../reference/spiro_glance.html">spiro_glance()</a></code> will behave different, as not the maximal values, but the overall average is usually useful to calculate. Therefore the mean parameter values for all steps of the constant load will be displayed.</p>
+<p>In the case of graded incremental or ramp tests, the <code>interval</code> argument will set the length over which the rolling average will be computed.</p>
+<p>For constant load tests <code><a href="../reference/spiro_glance.html">spiro_glance()</a></code> will behave different, as not the maximal values, but the overall average is usually useful to be calculated. Therefore the mean parameter values for all steps of the constant load will be displayed.</p>
 </div>
 <div id="plotting-the-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#plotting-the-data" class="anchor"></a>Plotting the data</h2>
-<p>To plot exercise test data retrieved by <code><a href="../reference/spiro.html">spiro()</a></code> it is recommend to use specific visualisation packages such as <code>ggplot2</code>, which give a variety of possible applications. However, to provide a quick view on the compiled data (e.g. for checking if the import operated correctly) <code>spiro</code> offers function for data visualisation.</p>
+<p>To plot exercise test data handled by <code><a href="../reference/spiro.html">spiro()</a></code> it is recommend to use specific visualisation packages such as <code>ggplot2</code> on the data. However, to provide a quick view on the compiled data (e.g. for checking if the import operated correctly) <code>spiro</code> offers basic shorthand functions of data visualisation.</p>
 <div id="plotting-oxygen-uptake-data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#plotting-oxygen-uptake-data" class="anchor"></a>Plotting oxygen uptake data</h3>
-<p>In many cases, the (relative) oxygen uptake will be the parameter of most interest when analysing spiroergometric data. <code><a href="../reference/spiro_plot.html">spiro_plot_VO2()</a></code> visualises the interpolated oxygen uptake data, supplemented by it’s rolling average and the underlying protocol load.</p>
+<p>In many cases, the (relative) oxygen uptake will be the parameter of most interest when analysing spiroergometric data. <code><a href="../reference/spiro_plot.html">spiro_plot_VO2()</a></code> visualises the interpolated oxygen uptake data, it’s rolling average and the underlying protocol load.</p>
 <p>The length of the computational interval for the rolling average can be changed by setting the <code>smooth</code> argument. To allow a further check for correct importing, setting the <code>title</code> argument to <code>TRUE</code> will create a plot title with the participant’s name and the test type.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/spiro_plot.html">spiro_plot_VO2</a></span><span class="op">(</span><span class="va">gxt_data</span>, 

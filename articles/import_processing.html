@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
+    <span class="fa fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -89,7 +89,7 @@
 <h2 class="hasAnchor">
 <a href="#one-step-import-and-processing-with-spiro" class="anchor"></a>One step import and processing with <code>spiro()</code>
 </h2>
-<p>To directly get started, paste the name of a breath-by-breath raw data file produced by a supported device into the <code><a href="../reference/spiro.html">spiro()</a></code> function. This will return a <code>data.frame</code> containing all relevant data for each second of testing, ready for summarising or plotting.</p>
+<p>To directly get started, paste the name of a breath-by-breath raw data file produced by a supported metabolic cart device into the <code><a href="../reference/spiro.html">spiro()</a></code> function. This will return a <code>data.frame</code> containing all relevant data for each second of testing, ready for summarising or plotting.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/smnnlt/spiro">spiro</a></span><span class="op">)</span>
 
@@ -163,7 +163,7 @@
 <h2 class="hasAnchor">
 <a href="#spiro-under-the-hood" class="anchor"></a><code>spiro()</code> under the hood</h2>
 <p>To create <code>data.frame</code>s as seen above, <code><a href="../reference/spiro.html">spiro()</a></code> wraps multiple function, which can be useful for providing additional options for the importing and processing of the data.</p>
-<!-- Add function scheme here -->
+<p><img src="import_processing_files/figure-html/data%20flow-1.png" width="700"></p>
 <div id="import-the-data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#import-the-data" class="anchor"></a>Import the data</h3>
@@ -224,7 +224,7 @@
 <h3 class="hasAnchor">
 <a href="#guess-or-specify-an-exercise-protocol" class="anchor"></a>Guess or specify an exercise protocol</h3>
 <p>To archive the full functionality of data summary and plotting with the spiro-package, a testing protocol needs to be attached to the imported data. The parameters of exercise protocols in <code>spiro</code> are the following:</p>
-<!-- Insert Picture of protocol variables -->
+<p><img src="import_processing_files/figure-html/protocol%20variable-1.png" width="700"></p>
 <div id="guessing-a-protocol" class="section level4">
 <h4 class="hasAnchor">
 <a href="#guessing-a-protocol" class="anchor"></a>Guessing a protocol</h4>
