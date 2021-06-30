@@ -163,7 +163,7 @@
 <h2 class="hasAnchor">
 <a href="#spiro-under-the-hood" class="anchor"></a><code>spiro()</code> under the hood</h2>
 <p>To create <code>data.frame</code>s as seen above, <code><a href="../reference/spiro.html">spiro()</a></code> wraps multiple function, which can be useful for providing additional options for the importing and processing of the data.</p>
-<p><img src="import_processing_files/figure-html/data%20flow-1.png" width="700"></p>
+<p><img src="import_processing_files/figure-html/data%20flow-1.png" width="2187.5"></p>
 <div id="import-the-data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#import-the-data" class="anchor"></a>Import the data</h3>
@@ -224,7 +224,7 @@
 <h3 class="hasAnchor">
 <a href="#guess-or-specify-an-exercise-protocol" class="anchor"></a>Guess or specify an exercise protocol</h3>
 <p>To archive the full functionality of data summary and plotting with the spiro-package, a testing protocol needs to be attached to the imported data. The parameters of exercise protocols in <code>spiro</code> are the following:</p>
-<p><img src="import_processing_files/figure-html/protocol%20variable-1.png" width="700"></p>
+<p><img src="import_processing_files/figure-html/protocol%20variable-1.png" width="2187.5"></p>
 <div id="guessing-a-protocol" class="section level4">
 <h4 class="hasAnchor">
 <a href="#guessing-a-protocol" class="anchor"></a>Guessing a protocol</h4>
@@ -309,9 +309,36 @@
 <a href="#attach-additional-heart-rate-data" class="anchor"></a>Attach additional heart rate data</h3>
 <p>Some metabolic carts only offer complicated options for connecting them to heart rate monitors. If heart rate data was recorded by another kind of device (e.g. wrist watch), this data can be attached to the existing <code>data.frame</code> of gas exchange measures with <code><a href="../reference/hr_add.html">hr_add()</a></code>.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">#hr_add(data_with_ptcl,</span>
-<span class="co">#       hr_file = NULL,</span>
-<span class="co">#       hr_offset = 0)</span></code></pre></div>
+<code class="sourceCode R"><span class="co"># import and process example data</span>
+<span class="va">data_rt</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/spiro.html">spiro</a></span><span class="op">(</span><span class="fu"><a href="../reference/spiro_example.html">spiro_example</a></span><span class="op">(</span><span class="st">"zan_ramp"</span><span class="op">)</span><span class="op">)</span>
+<span class="va">hr_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/spiro_example.html">spiro_example</a></span><span class="op">(</span><span class="st">"hr_ramp.tcx"</span><span class="op">)</span>
+
+<span class="fu"><a href="../reference/hr_add.html">hr_add</a></span><span class="op">(</span><span class="va">data_rt</span>,
+       hr_file <span class="op">=</span> <span class="va">hr_data</span>,
+       hr_offset <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+<span class="co">#&gt;    load step time    VO2   VCO2    RR   VT    VE HR VO2_rel VCO2_rel  RER RE</span>
+<span class="co">#&gt; 1     0    0    1 563.56 551.23 21.66 0.74 15.88 NA    8.54     8.35 0.98 NA</span>
+<span class="co">#&gt; 2     0    0    2 604.44 593.12 21.00 0.81 16.90 NA    9.16     8.99 0.98 NA</span>
+<span class="co">#&gt; 3     0    0    3 645.33 635.01 20.33 0.88 17.92 NA    9.78     9.62 0.98 NA</span>
+<span class="co">#&gt; 4     0    0    4 633.98 627.16 19.28 0.94 18.06 NA    9.61     9.50 0.99 NA</span>
+<span class="co">#&gt; 5     0    0    5 599.17 596.96 18.06 1.00 17.80 NA    9.08     9.04 1.00 NA</span>
+<span class="co">#&gt; 6     0    0    6 564.36 566.76 16.83 1.06 17.55 NA    8.55     8.59 1.00 NA</span>
+<span class="co">#&gt; 7     0    0    7 529.55 536.55 15.60 1.11 17.29 NA    8.02     8.13 1.01 NA</span>
+<span class="co">#&gt; 8     0    0    8 539.49 551.76 15.26 1.16 17.73 NA    8.17     8.36 1.02 NA</span>
+<span class="co">#&gt; 9     0    0    9 561.82 579.55 15.16 1.21 18.36 NA    8.51     8.78 1.03 NA</span>
+<span class="co">#&gt; 10    0    0   10 584.15 607.34 15.05 1.26 18.99 NA    8.85     9.20 1.04 NA</span>
+<span class="co">#&gt;     CHO   FO</span>
+<span class="co">#&gt; 1  0.71 0.02</span>
+<span class="co">#&gt; 2  0.77 0.02</span>
+<span class="co">#&gt; 3  0.83 0.01</span>
+<span class="co">#&gt; 4  0.83 0.01</span>
+<span class="co">#&gt; 5  0.80 0.00</span>
+<span class="co">#&gt; 6  0.78 0.00</span>
+<span class="co">#&gt; 7  0.75 0.00</span>
+<span class="co">#&gt; 8  0.79 0.00</span>
+<span class="co">#&gt; 9  0.84 0.00</span>
+<span class="co">#&gt; 10 0.90 0.00</span>
+<span class="co">#&gt; ... with 843 more rows</span></code></pre></div>
 <p><code><a href="../reference/hr_add.html">hr_add()</a></code> will import the heart rate data from a .tcx file via <code><a href="../reference/hr_add.html">hr_import()</a></code> and attach it to the existing data with <code><a href="../reference/hr_add.html">hr_apply()</a></code>. Note that you can manually supply the starting point of the heart rate recording in relation to the gas exchange measures recording with <code>hr_offset</code>.</p>
 </div>
 </div>

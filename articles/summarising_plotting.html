@@ -176,9 +176,14 @@
 <p>To verify the presence of correct heart rate data, <code><a href="../reference/spiro_plot.html">spiro_plot_HR()</a></code> provides an easy option of visualising the data together with the protocol load data.</p>
 <p>To allow a further check for correct importing, setting the <code>title</code> argument to <code>TRUE</code> will create a plot title with the participant’s name and the test type.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">#spiro_plot_HR(gxt_data, </span>
-<span class="co">#               title = FALSE</span>
-<span class="co">#               )</span></code></pre></div>
+<code class="sourceCode R"><span class="co"># load example data</span>
+<span class="va">data_with_hr</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/spiro.html">spiro</a></span><span class="op">(</span><span class="fu"><a href="../reference/spiro_example.html">spiro_example</a></span><span class="op">(</span><span class="st">"zan_ramp"</span><span class="op">)</span>, 
+                      hr_file <span class="op">=</span> <span class="fu"><a href="../reference/spiro_example.html">spiro_example</a></span><span class="op">(</span><span class="st">"hr_ramp.tcx"</span><span class="op">)</span><span class="op">)</span>
+
+<span class="fu"><a href="../reference/spiro_plot.html">spiro_plot_HR</a></span><span class="op">(</span><span class="va">data_with_hr</span>, 
+              title <span class="op">=</span> <span class="cn">FALSE</span>
+              <span class="op">)</span></code></pre></div>
+<p><img src="summarising_plotting_files/figure-html/spiro_plot_HR-1.png" width="100%" style="display: block; margin: auto;"></p>
 </div>
 </div>
   </div>
