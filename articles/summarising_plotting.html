@@ -147,8 +147,6 @@
 <p>For some types of exercise tests it may be preferable to get an overall instead of a stepwise summary of parameters. <code><a href="../reference/spiro_glance.html">spiro_glance()</a></code> will usually show the maximal values within the test after applying a smoothing by the use of a rolling average.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/spiro_glance.html">spiro_glance</a></span><span class="op">(</span><span class="va">gxt_data</span>, interval <span class="op">=</span> <span class="fl">30</span><span class="op">)</span>
-<span class="co">#&gt; Warning in if (is.na(attr(data, "protocol"))) {: the condition has length &gt; 1</span>
-<span class="co">#&gt; and only the first element will be used</span>
 <span class="co">#&gt;   VO2peak_abs VO2peak_rel RER_peak</span>
 <span class="co">#&gt; 1     4732.28        71.7     1.15</span></code></pre></div>
 <p>In the case of graded incremental or ramp tests, the <code>interval</code> argument will set the length over which the rolling average will be computed.</p>
