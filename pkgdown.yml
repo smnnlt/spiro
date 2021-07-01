@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   import_processing: import_processing.html
   summarising_plotting: summarising_plotting.html
-last_built: 2021-07-01T16:01Z
+last_built: 2021-07-01T20:26Z
 urls:
   reference: https://smnnlt.github.io/spiro/reference
   article: https://smnnlt.github.io/spiro/articles
