@@ -10,19 +10,34 @@
     <loc>https://smnnlt.github.io/spiro/reference/get_path.html</loc>
   </url>
   <url>
+    <loc>https://smnnlt.github.io/spiro/reference/get_protocol.html</loc>
+  </url>
+  <url>
+    <loc>https://smnnlt.github.io/spiro/reference/get_testtype.html</loc>
+  </url>
+  <url>
     <loc>https://smnnlt.github.io/spiro/reference/getstepmeans.html</loc>
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/guess_device.html</loc>
   </url>
   <url>
-    <loc>https://smnnlt.github.io/spiro/reference/guess_protocol.html</loc>
-  </url>
-  <url>
     <loc>https://smnnlt.github.io/spiro/reference/hr_add.html</loc>
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/knit_print.spiro.html</loc>
+  </url>
+  <url>
+    <loc>https://smnnlt.github.io/spiro/reference/process_protocol.html</loc>
+  </url>
+  <url>
+    <loc>https://smnnlt.github.io/spiro/reference/protocol_features.html</loc>
+  </url>
+  <url>
+    <loc>https://smnnlt.github.io/spiro/reference/set_protocol.html</loc>
+  </url>
+  <url>
+    <loc>https://smnnlt.github.io/spiro/reference/set_protocol_manual.html</loc>
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/spiro-package.html</loc>
@@ -56,9 +71,6 @@
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/spiro_plot.html</loc>
-  </url>
-  <url>
-    <loc>https://smnnlt.github.io/spiro/reference/spiro_protocol.html</loc>
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/spiro_summary.html</loc>
