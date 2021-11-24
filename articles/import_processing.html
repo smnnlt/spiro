@@ -158,7 +158,23 @@
 <li>
 <strong>FO</strong>: rate of fat oxidation (g/min)</li>
 </ul>
-<p>You can control the exercise protocol, the calculation of parameters related to body weight and the adding of heart rate data with the arguments of <code><a href="../reference/spiro.html">spiro()</a></code> or with the helper functions <code>add_protocol</code>, <code><a href="../reference/add_weight.html">add_weight()</a></code> and <code><a href="../reference/add_hr.html">add_hr()</a></code> within a piping syntax.</p>
+<div id="options" class="section level3">
+<h3 class="hasAnchor">
+<a href="#options" class="anchor"></a>Options for data processing</h3>
+<p>You can control the exercise protocol, the calculation of parameters related to body weight and the adding of heart rate data with the arguments of <code><a href="../reference/spiro.html">spiro()</a></code> or with the helper functions <code>add_protocol</code>, <code><a href="../reference/add_weight.html">add_weight()</a></code> and <code><a href="../reference/add_hr.html">add_hr()</a></code> within a piping syntax:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Note: The Base R pipe requires R version 4.1 or greater</span>
+
+<span class="va">protocol</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/set_protocol.html">set_protocol</a></span><span class="op">(</span>
+  <span class="fu"><a href="../reference/set_protocol.html">wu</a></span><span class="op">(</span>duration <span class="op">=</span> <span class="fl">120</span>, load <span class="op">=</span> <span class="fl">50</span><span class="op">)</span>,
+  <span class="fu"><a href="../reference/set_protocol.html">steps</a></span><span class="op">(</span>duration <span class="op">=</span> <span class="fl">30</span>, load <span class="op">=</span> <span class="fl">100</span>, increment <span class="op">=</span> <span class="fl">20</span>, count <span class="op">=</span> <span class="fl">24</span><span class="op">)</span>
+<span class="op">)</span>
+
+<span class="fu"><a href="../reference/spiro.html">spiro</a></span><span class="op">(</span>file <span class="op">=</span> <span class="fu"><a href="../reference/spiro_example.html">spiro_example</a></span><span class="op">(</span><span class="st">"zan_ramp"</span><span class="op">)</span><span class="op">)</span> |&gt;
+  <span class="fu"><a href="../reference/add_weight.html">add_weight</a></span><span class="op">(</span>weight <span class="op">=</span> <span class="fl">63.4</span><span class="op">)</span> |&gt;
+  <span class="fu"><a href="../reference/add_protocol.html">add_protocol</a></span><span class="op">(</span><span class="va">protocol</span><span class="op">)</span> |&gt;
+  <span class="fu"><a href="../reference/add_hr.html">add_hr</a></span><span class="op">(</span>hr_file <span class="op">=</span> <span class="fu"><a href="../reference/spiro_example.html">spiro_example</a></span><span class="op">(</span><span class="st">"hr_ramp.tcx"</span><span class="op">)</span>, hr_offset <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></code></pre></div>
+</div>
 </div>
 <div id="metabolic-carts" class="section level2">
 <h2 class="hasAnchor">
@@ -174,7 +190,7 @@
 </ul>
 <p>It is highly recommended to import only raw breath-by-breath data to analyze all available data and avoid the duplication of interpolation processes.</p>
 <p>To only import the data without further processing (such as interpolation) use the function <code><a href="../reference/spiro_import.html">spiro_import()</a></code>:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/spiro_import.html">spiro_import</a></span><span class="op">(</span><span class="va">file</span>, device <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
 <span class="co">#&gt;      time VO2 VCO2    RR   VT    VE HR load PetO2 PetCO2</span>
 <span class="co">#&gt; 1   3.435 393  320 13.62 0.79 10.76 NA    0    NA     NA</span>
@@ -189,7 +205,7 @@
 <span class="co">#&gt; 10 34.652 728  605 23.25 0.54 12.46 NA    0    NA     NA</span>
 <span class="co">#&gt; ... with 1987 more rows</span></code></pre></div>
 <p>Alternatively you can access the raw data after a <code><a href="../reference/spiro.html">spiro()</a></code> call by extracting the <code>"raw"</code> attribute of the result.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">s</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/spiro.html">spiro</a></span><span class="op">(</span><span class="va">file</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/attr.html">attr</a></span><span class="op">(</span><span class="va">s</span>,<span class="st">"raw"</span><span class="op">)</span></code></pre></div>
 </div>
@@ -201,7 +217,7 @@
 <h3 class="hasAnchor">
 <a href="#protocol-get" class="anchor"></a>Protocol guessing</h3>
 <p>By default, <code><a href="../reference/spiro.html">spiro()</a></code> guesses the exercise protocol using <code><a href="../reference/get_protocol.html">get_protocol()</a></code>, looking for velocity or load data in the imported raw data. To return the protocol guess after a <code><a href="../reference/spiro.html">spiro()</a></code> call, access the <code>"protocol"</code> attribute.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">s</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/spiro.html">spiro</a></span><span class="op">(</span><span class="va">file</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/attr.html">attr</a></span><span class="op">(</span><span class="va">s</span>,<span class="st">"protocol"</span><span class="op">)</span>
 <span class="co">#&gt;    duration load          type code</span>
@@ -230,7 +246,7 @@
 <a href="#protocol-set" class="anchor"></a>Protocol setting</h3>
 <p>In cases where no load data is saved in the metabolic cart’s file or <code><a href="../reference/get_protocol.html">get_protocol()</a></code> turns wrong, a protocol can be manually set.</p>
 <p>There are two ways to initially generate a protocol: by providing all load-duration combinations with <code><a href="../reference/set_protocol_manual.html">set_protocol_manual()</a></code> or by using the helper functions within <code><a href="../reference/set_protocol.html">set_protocol()</a></code>. Once a protocol has been set, it can be used as the <code>protocol</code> argument in a <code><a href="../reference/spiro.html">spiro()</a></code> call or attached to a <code>spiro</code> data frame with <code><a href="../reference/add_protocol.html">add_protocol()</a></code>.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># manually setting a test protocol</span>
 <span class="va">pt</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/set_protocol_manual.html">set_protocol_manual</a></span><span class="op">(</span>
   duration <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">60</span>,<span class="fl">300</span>,<span class="fl">30</span>,<span class="fl">300</span>,<span class="fl">30</span>,<span class="fl">300</span>,<span class="fl">30</span>,<span class="fl">300</span>,<span class="fl">30</span>,<span class="fl">300</span>,<span class="fl">30</span>,<span class="fl">300</span>,<span class="fl">30</span>,<span class="fl">300</span>,<span class="fl">30</span>,<span class="fl">300</span>,<span class="fl">30</span>,<span class="fl">300</span><span class="op">)</span>,
@@ -268,7 +284,7 @@
 <span class="co">#&gt; ... with 2999 more rows</span></code></pre></div>
 <p>With <code><a href="../reference/set_protocol.html">set_protocol()</a></code> a protocol can be defined without specifying every single load step. You can paste the pre-defined segment types <code><a href="../reference/set_protocol.html">pre()</a></code>, <code><a href="../reference/set_protocol.html">wu()</a></code>, <code><a href="../reference/set_protocol.html">const()</a></code>and <code><a href="../reference/set_protocol.html">steps()</a></code> into <code><a href="../reference/set_protocol.html">set_protocol()</a></code> in the desired order. The following graph illustrates an example of this practice:</p>
 <p><img src="import_processing_files/figure-html/protocol%20variable-1.png" width="90%" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/set_protocol.html">set_protocol</a></span><span class="op">(</span><span class="fu"><a href="../reference/set_protocol.html">pre</a></span><span class="op">(</span><span class="fl">60</span><span class="op">)</span>, <span class="fu"><a href="../reference/set_protocol.html">wu</a></span><span class="op">(</span><span class="fl">300</span>,<span class="fl">80</span><span class="op">)</span>, <span class="fu"><a href="../reference/set_protocol.html">steps</a></span><span class="op">(</span><span class="fl">180</span>,<span class="fl">100</span>,<span class="fl">25</span>,<span class="fl">6</span>,<span class="fl">30</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt;    duration load</span>
 <span class="co">#&gt; 1        60    0</span>
@@ -290,19 +306,19 @@
 <h2 class="hasAnchor">
 <a href="#weight" class="anchor"></a>Modify body weight</h2>
 <p>The <code>spiro</code> package calculates parameters relative to body weight. Per default <code><a href="../reference/spiro.html">spiro()</a></code> will look for information on body weight in the meta data of the original data file. If for some reason no or the wrong weight is present in the raw data file, <code>weight</code> can be manually given as an argument in <code><a href="../reference/spiro.html">spiro()</a></code> or with <code>add_weight</code>.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># set body weight as an argument in `spiro()`</span>
 <span class="va">s</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/spiro.html">spiro</a></span><span class="op">(</span><span class="va">file</span>, weight <span class="op">=</span> <span class="fl">68.3</span><span class="op">)</span>
 
 <span class="co"># set body weight using `add_weight()`</span>
-<span class="va">t</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/spiro.html">spiro</a></span><span class="op">(</span><span class="va">file</span><span class="op">)</span> |&gt;
-  <span class="fu"><a href="../reference/add_weight.html">add_weight</a></span><span class="op">(</span><span class="fl">68.3</span><span class="op">)</span></code></pre></div>
+<span class="va">t</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/spiro.html">spiro</a></span><span class="op">(</span><span class="va">file</span><span class="op">)</span> 
+<span class="va">u</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_weight.html">add_weight</a></span><span class="op">(</span><span class="va">t</span>, <span class="fl">68.3</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="heart-rate" class="section level2">
 <h2 class="hasAnchor">
 <a href="#heart-rate" class="anchor"></a>Work with external heart rate data</h2>
 <p>Some metabolic carts only offer complicated options for connecting them to heart rate monitors. If heart rate data was recorded by another kind of device (e.g. wrist watch), this data can be added within the <code><a href="../reference/spiro.html">spiro()</a></code> call or by using <code><a href="../reference/add_hr.html">add_hr()</a></code>.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># get example data file path</span>
 <span class="va">hpath</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/spiro_example.html">spiro_example</a></span><span class="op">(</span><span class="st">"hr_ramp.tcx"</span><span class="op">)</span>
 
@@ -310,8 +326,8 @@
 <span class="va">h</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/spiro.html">spiro</a></span><span class="op">(</span><span class="va">file</span>, hr_file <span class="op">=</span> <span class="va">hpath</span>, hr_offset <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
 
 <span class="co"># add heart rate data with `add_hr()`</span>
-<span class="va">i</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/spiro.html">spiro</a></span><span class="op">(</span><span class="va">file</span><span class="op">)</span> |&gt;
-  <span class="fu"><a href="../reference/add_hr.html">add_hr</a></span><span class="op">(</span>hr_file <span class="op">=</span> <span class="va">hpath</span>, hr_offset <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></code></pre></div>
+<span class="va">i</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/spiro.html">spiro</a></span><span class="op">(</span><span class="va">file</span><span class="op">)</span>
+<span class="va">j</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_hr.html">add_hr</a></span><span class="op">(</span><span class="va">i</span>, hr_file <span class="op">=</span> <span class="va">hpath</span>, hr_offset <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></code></pre></div>
 <p><code><a href="../reference/add_hr.html">add_hr()</a></code> will import the heart rate data from a .tcx file and attach it to the existing data set. You can manually set the starting point of the heart rate recording relative to the start of the gas exchange measures recording with the <code>hr_offset</code> argument.</p>
 </div>
   </div>
