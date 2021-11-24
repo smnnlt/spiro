@@ -89,7 +89,7 @@ based on profile sections." />
   <a href="../articles/import_processing.html">Import &amp; Processing</a>
 </li>
 <li>
-  <a href="../articles/summarising_plotting.html">Summarising &amp; Plotting</a>
+  <a href="../articles/summarizing_plotting.html">Summarizing &amp; Plotting</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -116,7 +116,7 @@ based on profile sections." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Setting an exercise testing profile</h1>
-    <small class="dont-index">Source: <a href='https://github.com/smnnlt/spiro/blob/master/R/protocol.R'><code>R/protocol.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/smnnlt/spiro/blob/master/R/add_protocol.R'><code>R/add_protocol.R</code></a></small>
     <div class="hidden name"><code>set_protocol.Rd</code></div>
     </div>
 
@@ -140,7 +140,7 @@ based on profile sections.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>...</th>
-      <td><p>Functions related to sections of the test profile, such as
+      <td><p>Functions related to sections of the load profile, such as
 <code>pre</code>, <code>wu</code>, <code>const</code> or <code>step</code>. Sections will be
 evaluated in the order they are entered.</p></td>
     </tr>
@@ -169,6 +169,9 @@ and the following load step.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A <code>data.frame</code> with the duration and load of each protocol step.</p>
     <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
 
     
@@ -180,29 +183,30 @@ and the following load step.</p></td>
 </ul>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='set_protocol_manual.html'>set_protocol_manual</a> for completely manual protocol design.</p></div>
+    <div class='dont-index'><p><a href='set_protocol_manual.html'>set_protocol_manual</a> for manual protocol design.</p>
+<p><a href='get_protocol.html'>get_protocol</a> For automated extracting of protocols from raw data.</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>set_protocol</span><span class='op'>(</span><span class='fu'>pre</span><span class='op'>(</span><span class='fl'>60</span><span class='op'>)</span>, <span class='fu'>wu</span><span class='op'>(</span><span class='fl'>300</span>,<span class='fl'>100</span><span class='op'>)</span>, <span class='fu'>steps</span><span class='op'>(</span><span class='fl'>180</span>,<span class='fl'>150</span>,<span class='fl'>25</span>,<span class='fl'>8</span>,<span class='fl'>30</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;    duration load
-#&gt; 1        60    0
-#&gt; 2       300  100
-#&gt; 3       180  150
-#&gt; 4        30    0
-#&gt; 5       180  175
-#&gt; 6        30    0
-#&gt; 7       180  200
-#&gt; 8        30    0
-#&gt; 9       180  225
-#&gt; 10       30    0
-#&gt; 11      180  250
-#&gt; 12       30    0
-#&gt; 13      180  275
-#&gt; 14       30    0
-#&gt; 15      180  300
-#&gt; 16       30    0
-#&gt; 17      180  325</div><div class='input'>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>set_protocol</span><span class='op'>(</span><span class='fu'>pre</span><span class='op'>(</span><span class='fl'>60</span><span class='op'>)</span>, <span class='fu'>wu</span><span class='op'>(</span><span class='fl'>300</span>, <span class='fl'>100</span><span class='op'>)</span>, <span class='fu'>steps</span><span class='op'>(</span><span class='fl'>180</span>, <span class='fl'>150</span>, <span class='fl'>25</span>, <span class='fl'>8</span>, <span class='fl'>30</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    duration load</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1        60    0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2       300  100</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3       180  150</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4        30    0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5       180  175</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6        30    0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7       180  200</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8        30    0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9       180  225</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10       30    0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 11      180  250</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 12       30    0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 13      180  275</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 14       30    0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 15      180  300</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 16       30    0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 17      180  325</span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

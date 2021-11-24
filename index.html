@@ -5,15 +5,15 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Manage data from cardiopulmonary exercise testing • spiro</title>
+<title>Manage Data from Cardiopulmonary Exercise Testing • spiro</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Manage data from cardiopulmonary exercise testing">
-<meta property="og:description" content="Import, process, summarise and visualise raw data from 
-    various metabolic cart devices.">
+<script src="pkgdown.js"></script><meta property="og:title" content="Manage Data from Cardiopulmonary Exercise Testing">
+<meta property="og:description" content="Import, process, summarize and visualize raw data from 
+    metabolic carts.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -48,7 +48,7 @@
   <a href="articles/import_processing.html">Import &amp; Processing</a>
 </li>
 <li>
-  <a href="articles/summarising_plotting.html">Summarising &amp; Plotting</a>
+  <a href="articles/summarizing_plotting.html">Summarizing &amp; Plotting</a>
 </li>
 <li>
   <a href="reference/index.html">Reference</a>
@@ -82,9 +82,9 @@
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h2>
-<p>The goal of <code>spiro</code> is to enable a fast and standardised workflow with raw data files from cardiopulmonary exercise testing. The package provides simple tools for data import, processing, summary and visualisation.</p>
+<p>The goal of <code>spiro</code> is to enable a fast and standardized workflow with raw data from cardiopulmonary exercise testing. The package provides simple tools for data import, processing, summary and visualization.</p>
 <blockquote>
-<p>WARNING: This package is currently under early development. It is recommended to use this software for demonstrational or testing purposes only. We advise against using it for scientific analyses at the moment, as at this stage of development major changes in the package’s computations may occur.</p>
+<p>WARNING: This package is currently under development. At the moment, I recommend to use it for demonstration or testing purposes only. When using <code>spiro</code> for scientific analyses, make sure to state the exact package version, as at this stage of development the package’s functions may undergo major changes.</p>
 </blockquote>
 </div>
 <div id="installation" class="section level2">
@@ -92,16 +92,16 @@
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>Install the current development version from GitHub:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"smnnlt/spiro"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"smnnlt/spiro"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
 <ul>
-<li>Use <code><a href="reference/spiro.html">spiro()</a></code> for one-step data import and processing from raw metabolic cart files.</li>
-<li>Use <code><a href="reference/spiro_summary.html">spiro_summary()</a></code> and <code><a href="reference/spiro_glance.html">spiro_glance()</a></code> for a stepwise or overall summary of the imported data.</li>
-<li>Use <code>spiro_plot_*()</code> as a shortcut for visualising the imported data.</li>
+<li>Use <code><a href="reference/spiro.html">spiro()</a></code> to automatically import and process raw data from cardiopulmonary exercise testing.</li>
+<li>Use <code><a href="reference/spiro_summary.html">spiro_summary()</a></code> and <code><a href="reference/spiro_max.html">spiro_max()</a></code> for a stepwise summary or the calculation of maximum parameter values.</li>
+<li>Use <code><a href="reference/spiro_plot.html">spiro_plot()</a></code> to visualize the data.</li>
 </ul>
 <div id="metabolic-carts" class="section level4">
 <h4 class="hasAnchor">
@@ -120,31 +120,65 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/smnnlt/spiro">spiro</a></span><span class="op">)</span>
 
-<span class="co"># get data for example</span>
+<span class="co"># get data path for example</span>
 <span class="va">file</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/spiro_example.html">spiro_example</a></span><span class="op">(</span><span class="st">"zan_gxt"</span><span class="op">)</span>
 
 <span class="va">gxt_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/spiro.html">spiro</a></span><span class="op">(</span><span class="va">file</span><span class="op">)</span>
-<span class="fu"><a href="reference/spiro_summary.html">spiro_summary</a></span><span class="op">(</span><span class="va">gxt_data</span><span class="op">)</span>
-<span class="co">#&gt; for pre-measures, interval was set to length of measures</span>
-<span class="co">#&gt;    step_number load     VE     VO2    VCO2  RER VO2_rel     RE  CHO   FO</span>
-<span class="co">#&gt; 1            0  0.0  13.03  500.19  411.74 0.82    7.58     NA 0.27 0.15</span>
-<span class="co">#&gt; 2            1  2.0  39.87 1860.92 1585.75 0.85   28.20 234.97 1.27 0.46</span>
-<span class="co">#&gt; 3            2  2.4  44.63 2097.82 1805.27 0.86   31.79 220.73 1.51 0.49</span>
-<span class="co">#&gt; 4            3  2.8  52.63 2413.01 2122.17 0.88   36.56 217.62 1.95 0.48</span>
-<span class="co">#&gt; 5            4  3.2  57.19 2710.68 2319.93 0.86   41.07 213.91 1.89 0.65</span>
-<span class="co">#&gt; 6            5  3.6  67.45 3048.75 2684.87 0.88   46.19 213.86 2.47 0.60</span>
-<span class="co">#&gt; 7            6  4.0  75.91 3404.02 3026.70 0.89   51.58 214.90 2.90 0.62</span>
-<span class="co">#&gt; 8            7  4.4  88.36 3724.37 3383.64 0.91   56.43 213.75 3.50 0.56</span>
-<span class="co">#&gt; 9            8  4.8 106.44 4223.82 3993.55 0.95   64.00 222.21 4.68 0.37</span>
-<span class="co">#&gt; 10           9  5.2 127.54 4573.91 4488.36 0.98   69.30 222.12 5.82 0.12</span>
 
-<span class="fu"><a href="reference/spiro_plot.html">spiro_plot_VO2</a></span><span class="op">(</span><span class="va">gxt_data</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="reference/spiro_summary.html">spiro_summary</a></span><span class="op">(</span><span class="va">gxt_data</span><span class="op">)</span>
+<span class="co">#&gt; for pre-measures, interval was set to length of measures (60 seconds)</span>
+<span class="co">#&gt;    step_number load     VO2    VCO2     VE HR PetO2 PetCO2 VO2_rel     RE  RER</span>
+<span class="co">#&gt; 1            0  0.0  500.19  411.74  13.03 NA    NA     NA    7.58     NA 0.82</span>
+<span class="co">#&gt; 2            1  2.0 1860.92 1585.75  39.87 NA    NA     NA   28.20 234.97 0.85</span>
+<span class="co">#&gt; 3            2  2.4 2097.82 1805.27  44.63 NA    NA     NA   31.79 220.73 0.86</span>
+<span class="co">#&gt; 4            3  2.8 2413.01 2122.17  52.63 NA    NA     NA   36.56 217.62 0.88</span>
+<span class="co">#&gt; 5            4  3.2 2710.68 2319.93  57.19 NA    NA     NA   41.07 213.91 0.86</span>
+<span class="co">#&gt; 6            5  3.6 3048.75 2684.87  67.45 NA    NA     NA   46.19 213.86 0.88</span>
+<span class="co">#&gt; 7            6  4.0 3404.02 3026.70  75.91 NA    NA     NA   51.58 214.90 0.89</span>
+<span class="co">#&gt; 8            7  4.4 3724.37 3383.64  88.36 NA    NA     NA   56.43 213.75 0.91</span>
+<span class="co">#&gt; 9            8  4.8 4223.82 3993.55 106.44 NA    NA     NA   64.00 222.21 0.95</span>
+<span class="co">#&gt; 10           9  5.2 4573.91 4488.36 127.54 NA    NA     NA   69.30 222.12 0.98</span>
+<span class="co">#&gt;     CHO   FO</span>
+<span class="co">#&gt; 1  0.27 0.15</span>
+<span class="co">#&gt; 2  1.27 0.46</span>
+<span class="co">#&gt; 3  1.51 0.49</span>
+<span class="co">#&gt; 4  1.95 0.48</span>
+<span class="co">#&gt; 5  1.89 0.65</span>
+<span class="co">#&gt; 6  2.47 0.60</span>
+<span class="co">#&gt; 7  2.90 0.62</span>
+<span class="co">#&gt; 8  3.50 0.56</span>
+<span class="co">#&gt; 9  4.68 0.37</span>
+<span class="co">#&gt; 10 5.82 0.12</span>
+
+<span class="fu"><a href="reference/spiro_plot.html">spiro_plot</a></span><span class="op">(</span><span class="va">gxt_data</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-example-1.png" width="100%"></p>
+</div>
+<div id="citation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#citation" class="anchor"></a>Citation</h2>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span><span class="op">(</span><span class="st">"spiro"</span><span class="op">)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; To cite spiro in publications use:</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;   Simon Nolte (2021). spiro: Manage Data from Cardiopulmonary Exercise</span>
+<span class="co">#&gt;   Testing. R package version 0.0.0.9000.</span>
+<span class="co">#&gt;   https://smnnlt.github.io/spiro/</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; A BibTeX entry for LaTeX users is</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;   @Manual{,</span>
+<span class="co">#&gt;     title = {spiro: Manage Data from Cardiopulmonary Exercise Testing},</span>
+<span class="co">#&gt;     author = {Simon Nolte},</span>
+<span class="co">#&gt;     year = {2021},</span>
+<span class="co">#&gt;     url = {https://smnnlt.github.io/spiro/},</span>
+<span class="co">#&gt;     note = {R package version 0.0.0.9000},</span>
+<span class="co">#&gt;   }</span></code></pre></div>
 </div>
 <div id="contributing" class="section level2">
 <h2 class="hasAnchor">
 <a href="#contributing" class="anchor"></a>Contributing</h2>
-<p>If you encounter any bug or want to request new features, please <a href="https://github.com/smnnlt/spiro/issues">submit an issue</a>. If you want your type of metabolic cart to be supported by this package, consider writing me a message with an example data file. If you are familiar with writing R code, feel free to submit any pull requests.</p>
+<p>If you encounter a bug or want to request new features, please <a href="https://github.com/smnnlt/spiro/issues">submit an issue</a>. To have your device type of metabolic cart supported by this package, consider writing me a message with example data files. If you are familiar with writing R code, feel free to submit pull requests.</p>
 <p>Please note that this package is released with a <a href="https://smnnlt.github.io/spiro/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to <code>spiro</code>, you agree to abide by its terms.</p>
 </div>
 </div>
@@ -171,6 +205,12 @@
 <h2>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
+</ul>
+</div>
+<div class="citation">
+<h2>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html">Citing spiro</a></li>
 </ul>
 </div>
 <div class="developers">

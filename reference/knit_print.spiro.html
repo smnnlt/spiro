@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Printing spiroergometric data frames in a knitr context — knit_print.spiro • spiro</title>
+<title>Printing spiro data frames in a knitr context — knit_print.spiro • spiro</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Printing spiroergometric data frames in a knitr context — knit_print.spiro" />
+<meta property="og:title" content="Printing spiro data frames in a knitr context — knit_print.spiro" />
 <meta property="og:description" content="knit_print.spiro() provides a method for printing data.frames
 from spiro within knitr." />
 
@@ -89,7 +89,7 @@ from spiro within knitr." />
   <a href="../articles/import_processing.html">Import &amp; Processing</a>
 </li>
 <li>
-  <a href="../articles/summarising_plotting.html">Summarising &amp; Plotting</a>
+  <a href="../articles/summarizing_plotting.html">Summarizing &amp; Plotting</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -115,7 +115,7 @@ from spiro within knitr." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Printing spiroergometric data frames in a knitr context</h1>
+    <h1>Printing spiro data frames in a knitr context</h1>
     <small class="dont-index">Source: <a href='https://github.com/smnnlt/spiro/blob/master/R/knit_print.R'><code>R/knit_print.R</code></a></small>
     <div class="hidden name"><code>knit_print.spiro.Rd</code></div>
     </div>
@@ -153,12 +153,12 @@ be limited in printing if row number exceed <code>max</code>.</p></td>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Spiroergometric data as imported by <code><a href='spiro.html'>spiro</a></code> will often come in
-large <code>data.frame</code>s. When knitting a R-Markdown document these will
-normally be printed in full size.</p>
+    <p>Cardiopulmonary exercise testing data imported by <code><a href='spiro.html'>spiro</a></code> will
+often come in large <code>data.frame</code>s. When knitting R Markdown documents
+these will normally be printed in full size.</p>
 <p>This function provides a method for <code>data.frame</code>s of the class
-<code>spiro</code> to limit the displayed row number to <code>min</code> if it exceeds
-<code>max</code>. The number of hidden data rows will be printed below the
+<code>spiro</code> to limit the number of rows displayed to <code>min</code> if it
+exceeds <code>max</code>. The number of hidden data rows will be printed below the
 <code>data.frame</code>.</p>
 
   </div>

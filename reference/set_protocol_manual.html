@@ -89,7 +89,7 @@ for an exercise test." />
   <a href="../articles/import_processing.html">Import &amp; Processing</a>
 </li>
 <li>
-  <a href="../articles/summarising_plotting.html">Summarising &amp; Plotting</a>
+  <a href="../articles/summarizing_plotting.html">Summarizing &amp; Plotting</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -116,7 +116,7 @@ for an exercise test." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Manually setting a testing profile</h1>
-    <small class="dont-index">Source: <a href='https://github.com/smnnlt/spiro/blob/master/R/protocol.R'><code>R/protocol.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/smnnlt/spiro/blob/master/R/add_protocol.R'><code>R/add_protocol.R</code></a></small>
     <div class="hidden name"><code>set_protocol_manual.Rd</code></div>
     </div>
 
@@ -149,36 +149,49 @@ the corresponding load of each step.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A <code>data.frame</code> with the duration and load of each protocol step.</p>
     <h2 class="hasAnchor" id="methods-by-class-"><a class="anchor" href="#methods-by-class-"></a>Methods (by class)</h2>
 
     
 <ul>
 <li><p><code>default</code>: Default method when duration and load are
 given separately</p></li>
-<li><p><code>data.frame</code>: Method for data.frames with duration and load
-column</p></li>
+<li><p><code>data.frame</code>: Method for data frames with a duration and a
+load column</p></li>
 </ul>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><a href='set_protocol.html'>set_protocol</a> for protocol setting with helper functions.</p>
+<p><a href='get_protocol.html'>get_protocol</a> For automated extracting of protocols from raw data.</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>set_protocol_manual</span><span class='op'>(</span>duration <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>300</span>,<span class='fl'>120</span>,<span class='fl'>300</span>,<span class='fl'>60</span>,<span class='fl'>300</span><span class='op'>)</span>, load <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>3</span>,<span class='fl'>5</span>,<span class='fl'>3</span>,<span class='fl'>6</span>,<span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;   duration load
-#&gt; 1      300    3
-#&gt; 2      120    5
-#&gt; 3      300    3
-#&gt; 4       60    6
-#&gt; 5      300    3</div><div class='input'>
-<span class='co'># using a data.frame as input</span>
-<span class='va'>pt_data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>
-  duration <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>180</span>,<span class='fl'>150</span>,<span class='fl'>120</span>,<span class='fl'>90</span>,<span class='fl'>60</span>,<span class='fl'>30</span><span class='op'>)</span>,
-  load <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>200</span>,<span class='fl'>250</span>,<span class='fl'>300</span>,<span class='fl'>350</span>,<span class='fl'>400</span>,<span class='fl'>450</span><span class='op'>)</span><span class='op'>)</span>
-<span class='fu'>set_protocol_manual</span><span class='op'>(</span><span class='va'>pt_data</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;   duration load
-#&gt; 1      180  200
-#&gt; 2      150  250
-#&gt; 3      120  300
-#&gt; 4       90  350
-#&gt; 5       60  400
-#&gt; 6       30  450</div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>set_protocol_manual</span><span class='op'>(</span></span>
+<span class='r-in'>  duration <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>300</span>, <span class='fl'>120</span>, <span class='fl'>300</span>, <span class='fl'>60</span>, <span class='fl'>300</span><span class='op'>)</span>,</span>
+<span class='r-in'>  load <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>3</span>, <span class='fl'>5</span>, <span class='fl'>3</span>, <span class='fl'>6</span>, <span class='fl'>3</span><span class='op'>)</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   duration load</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1      300    3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2      120    5</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3      300    3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4       60    6</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5      300    3</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># using a data.frame as input</span></span>
+<span class='r-in'><span class='va'>pt_data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span></span>
+<span class='r-in'>  duration <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>180</span>, <span class='fl'>150</span>, <span class='fl'>120</span>, <span class='fl'>90</span>, <span class='fl'>60</span>, <span class='fl'>30</span><span class='op'>)</span>,</span>
+<span class='r-in'>  load <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>200</span>, <span class='fl'>250</span>, <span class='fl'>300</span>, <span class='fl'>350</span>, <span class='fl'>400</span>, <span class='fl'>450</span><span class='op'>)</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>set_protocol_manual</span><span class='op'>(</span><span class='va'>pt_data</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   duration load</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1      180  200</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2      150  250</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3      120  300</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4       90  350</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5       60  400</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6       30  450</span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

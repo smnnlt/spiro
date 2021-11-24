@@ -4,10 +4,16 @@
     <loc>https://smnnlt.github.io/spiro/index.html</loc>
   </url>
   <url>
-    <loc>https://smnnlt.github.io/spiro/reference/apply_protocol.html</loc>
+    <loc>https://smnnlt.github.io/spiro/reference/add_hr.html</loc>
   </url>
   <url>
-    <loc>https://smnnlt.github.io/spiro/reference/get_path.html</loc>
+    <loc>https://smnnlt.github.io/spiro/reference/add_protocol.html</loc>
+  </url>
+  <url>
+    <loc>https://smnnlt.github.io/spiro/reference/add_weight.html</loc>
+  </url>
+  <url>
+    <loc>https://smnnlt.github.io/spiro/reference/get_features.html</loc>
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/get_protocol.html</loc>
@@ -16,22 +22,10 @@
     <loc>https://smnnlt.github.io/spiro/reference/get_testtype.html</loc>
   </url>
   <url>
-    <loc>https://smnnlt.github.io/spiro/reference/getstepmeans.html</loc>
-  </url>
-  <url>
     <loc>https://smnnlt.github.io/spiro/reference/guess_device.html</loc>
   </url>
   <url>
-    <loc>https://smnnlt.github.io/spiro/reference/hr_add.html</loc>
-  </url>
-  <url>
     <loc>https://smnnlt.github.io/spiro/reference/knit_print.spiro.html</loc>
-  </url>
-  <url>
-    <loc>https://smnnlt.github.io/spiro/reference/process_protocol.html</loc>
-  </url>
-  <url>
-    <loc>https://smnnlt.github.io/spiro/reference/protocol_features.html</loc>
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/set_protocol.html</loc>
@@ -46,13 +40,7 @@
     <loc>https://smnnlt.github.io/spiro/reference/spiro.html</loc>
   </url>
   <url>
-    <loc>https://smnnlt.github.io/spiro/reference/spiro_add.html</loc>
-  </url>
-  <url>
     <loc>https://smnnlt.github.io/spiro/reference/spiro_example.html</loc>
-  </url>
-  <url>
-    <loc>https://smnnlt.github.io/spiro/reference/spiro_glance.html</loc>
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/spiro_import.html</loc>
@@ -70,18 +58,18 @@
     <loc>https://smnnlt.github.io/spiro/reference/spiro_interpolate.html</loc>
   </url>
   <url>
+    <loc>https://smnnlt.github.io/spiro/reference/spiro_max.html</loc>
+  </url>
+  <url>
     <loc>https://smnnlt.github.io/spiro/reference/spiro_plot.html</loc>
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/spiro_summary.html</loc>
   </url>
   <url>
-    <loc>https://smnnlt.github.io/spiro/reference/to_seconds.html</loc>
-  </url>
-  <url>
     <loc>https://smnnlt.github.io/spiro/articles/import_processing.html</loc>
   </url>
   <url>
-    <loc>https://smnnlt.github.io/spiro/articles/summarising_plotting.html</loc>
+    <loc>https://smnnlt.github.io/spiro/articles/summarizing_plotting.html</loc>
   </url>
 </urlset>
