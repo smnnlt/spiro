@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://smnnlt.github.io/spiro/404.html</loc>
+  </url>
+  <url>
+    <loc>https://smnnlt.github.io/spiro/CODE_OF_CONDUCT.html</loc>
+  </url>
+  <url>
+    <loc>https://smnnlt.github.io/spiro/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>https://smnnlt.github.io/spiro/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://smnnlt.github.io/spiro/articles/import_processing.html</loc>
+  </url>
+  <url>
+    <loc>https://smnnlt.github.io/spiro/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>https://smnnlt.github.io/spiro/articles/summarizing_plotting.html</loc>
+  </url>
+  <url>
+    <loc>https://smnnlt.github.io/spiro/authors.html</loc>
+  </url>
+  <url>
     <loc>https://smnnlt.github.io/spiro/index.html</loc>
+  </url>
+  <url>
+    <loc>https://smnnlt.github.io/spiro/news/index.html</loc>
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/add_hr.html</loc>
@@ -23,6 +50,9 @@
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/guess_device.html</loc>
+  </url>
+  <url>
+    <loc>https://smnnlt.github.io/spiro/reference/index.html</loc>
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/knit_print.spiro.html</loc>
@@ -65,11 +95,5 @@
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/spiro_summary.html</loc>
-  </url>
-  <url>
-    <loc>https://smnnlt.github.io/spiro/articles/import_processing.html</loc>
-  </url>
-  <url>
-    <loc>https://smnnlt.github.io/spiro/articles/summarizing_plotting.html</loc>
   </url>
 </urlset>
