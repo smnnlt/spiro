@@ -125,39 +125,39 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/spiro_summary.html">spiro_summary</a></span><span class="op">(</span><span class="va">gxt_data</span>, interval <span class="op">=</span> <span class="fl">120</span><span class="op">)</span>
 <span class="co">#&gt; for pre-measures, interval was set to length of measures (60 seconds)</span>
-<span class="co">#&gt;    step_number load     VO2    VCO2     VE HR PetO2 PetCO2 VO2_rel     RE  RER</span>
-<span class="co">#&gt; 1            0  0.0  500.19  411.74  13.03 NA    NA     NA    7.58     NA 0.82</span>
-<span class="co">#&gt; 2            1  2.0 1860.92 1585.75  39.87 NA    NA     NA   28.20 234.97 0.85</span>
-<span class="co">#&gt; 3            2  2.4 2097.82 1805.27  44.63 NA    NA     NA   31.79 220.73 0.86</span>
-<span class="co">#&gt; 4            3  2.8 2413.01 2122.17  52.63 NA    NA     NA   36.56 217.62 0.88</span>
-<span class="co">#&gt; 5            4  3.2 2710.68 2319.93  57.19 NA    NA     NA   41.07 213.91 0.86</span>
-<span class="co">#&gt; 6            5  3.6 3048.75 2684.87  67.45 NA    NA     NA   46.19 213.86 0.88</span>
-<span class="co">#&gt; 7            6  4.0 3404.02 3026.70  75.91 NA    NA     NA   51.58 214.90 0.89</span>
-<span class="co">#&gt; 8            7  4.4 3724.37 3383.64  88.36 NA    NA     NA   56.43 213.75 0.91</span>
-<span class="co">#&gt; 9            8  4.8 4223.82 3993.55 106.44 NA    NA     NA   64.00 222.21 0.95</span>
-<span class="co">#&gt; 10           9  5.2 4573.91 4488.36 127.54 NA    NA     NA   69.30 222.12 0.98</span>
-<span class="co">#&gt;     CHO   FO</span>
-<span class="co">#&gt; 1  0.27 0.15</span>
-<span class="co">#&gt; 2  1.27 0.46</span>
-<span class="co">#&gt; 3  1.51 0.49</span>
-<span class="co">#&gt; 4  1.95 0.48</span>
-<span class="co">#&gt; 5  1.89 0.65</span>
-<span class="co">#&gt; 6  2.47 0.60</span>
-<span class="co">#&gt; 7  2.90 0.62</span>
-<span class="co">#&gt; 8  3.50 0.56</span>
-<span class="co">#&gt; 9  4.68 0.37</span>
-<span class="co">#&gt; 10 5.82 0.12</span></code></pre></div>
+<span class="co">#&gt;    step_number duration load     VO2    VCO2     VE HR PetO2 PetCO2 VO2_rel</span>
+<span class="co">#&gt; 1            0       60  0.0  500.19  411.74  13.03 NA    NA     NA    7.58</span>
+<span class="co">#&gt; 2            1      300  2.0 1860.92 1585.75  39.87 NA    NA     NA   28.20</span>
+<span class="co">#&gt; 3            2      300  2.4 2097.82 1805.27  44.63 NA    NA     NA   31.79</span>
+<span class="co">#&gt; 4            3      300  2.8 2413.01 2122.17  52.63 NA    NA     NA   36.56</span>
+<span class="co">#&gt; 5            4      300  3.2 2710.68 2319.93  57.19 NA    NA     NA   41.07</span>
+<span class="co">#&gt; 6            5      300  3.6 3048.75 2684.87  67.45 NA    NA     NA   46.19</span>
+<span class="co">#&gt; 7            6      300  4.0 3404.02 3026.70  75.91 NA    NA     NA   51.58</span>
+<span class="co">#&gt; 8            7      300  4.4 3724.37 3383.64  88.36 NA    NA     NA   56.43</span>
+<span class="co">#&gt; 9            8      300  4.8 4223.82 3993.55 106.44 NA    NA     NA   64.00</span>
+<span class="co">#&gt; 10           9      300  5.2 4573.91 4488.36 127.54 NA    NA     NA   69.30</span>
+<span class="co">#&gt;        RE  RER  CHO   FO</span>
+<span class="co">#&gt; 1      NA 0.82 0.27 0.15</span>
+<span class="co">#&gt; 2  234.97 0.85 1.27 0.46</span>
+<span class="co">#&gt; 3  220.73 0.86 1.51 0.49</span>
+<span class="co">#&gt; 4  217.62 0.88 1.95 0.48</span>
+<span class="co">#&gt; 5  213.91 0.86 1.89 0.65</span>
+<span class="co">#&gt; 6  213.86 0.88 2.47 0.60</span>
+<span class="co">#&gt; 7  214.90 0.89 2.90 0.62</span>
+<span class="co">#&gt; 8  213.75 0.91 3.50 0.56</span>
+<span class="co">#&gt; 9  222.21 0.95 4.68 0.37</span>
+<span class="co">#&gt; 10 222.12 0.98 5.82 0.12</span></code></pre></div>
 <p>The length of the computational interval (in seconds) can be modified with the <code>interval</code> argument. If the interval exceeds the length of any step, it will be shortened for these steps displaying a note. You can turn such messages off with setting the argument <code>quiet = TRUE</code>.</p>
 </div>
 <div class="section level2">
 <h2 id="maximal-parameter-values-with-spiro_max">Maximal parameter values with <code>spiro_max()</code><a class="anchor" aria-label="anchor" href="#maximal-parameter-values-with-spiro_max"></a>
 </h2>
-<p>For some types of exercise tests it may be preferable to get maximal values of the measured parameters. <code><a href="../reference/spiro_max.html">spiro_max()</a></code> calculates these after smoothing the data with a rolling average.</p>
+<p>For some types of exercise tests it may be preferable to get maximal values of the measured parameters. <code><a href="../reference/spiro_max.html">spiro_max()</a></code> calculates these after smoothing the data.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/spiro_max.html">spiro_max</a></span><span class="op">(</span><span class="va">gxt_data</span>, smooth <span class="op">=</span> <span class="fl">30</span><span class="op">)</span>
 <span class="co">#&gt;       VO2    VCO2 VO2_rel     VE  RER HR</span>
-<span class="co">#&gt; 1 4732.28 4640.75    71.7 129.62 1.15 NA</span></code></pre></div>
-<p>The <code>smooth</code> argument sets the length of the interval for the rolling average in seconds. Per default the smoothing will not apply to the heart rate values, but you can enable this behavior with <code>hr_smooth = TRUE</code>.</p>
+<span class="co">#&gt; 1 4732.28 4640.75    71.7 129.62 1.14 NA</span></code></pre></div>
+<p>The <code>smooth</code> argument controls the interval and method for the data smoothing. Smoothing happens by the calculation of a rolling average either over a fixed time interval (e.g. <code>smooth = 30</code> for 30 seconds), or over a fixed number of breaths (e.g. <code>smooth = "30b"</code> for 30 breaths). Per default the smoothing will not apply to the heart rate values, but you can enable this behavior with <code>hr_smooth = TRUE</code>.</p>
 </div>
 <div class="section level2">
 <h2 id="plotting-the-data">Plotting the data<a class="anchor" aria-label="anchor" href="#plotting-the-data"></a>
