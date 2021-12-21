@@ -180,7 +180,7 @@
 <p>The <code>spiro</code> package supports different metabolic carts. The metabolic cart a data file is produced by is usually determined automatically, but can also be set manually in the <code><a href="../reference/spiro.html">spiro()</a></code> function. Currently this package supports the following devices:</p>
 <ul>
 <li>
-<strong>CORTEX</strong> (<code>"cortex"</code>): .xlsx or .xls files in German language</li>
+<strong>CORTEX</strong> (<code>"cortex"</code>): .xlsx, .xls or .xml files in German language</li>
 <li>
 <strong>COSMED</strong> (<code>"cosmed"</code>): .xlsx or .xls files in English or German language</li>
 <li>
@@ -303,7 +303,7 @@
 <div class="section level2">
 <h2 id="weight">Modify body weight<a class="anchor" aria-label="anchor" href="#weight"></a>
 </h2>
-<p>The <code>spiro</code> package calculates parameters relative to body weight. Per default <code><a href="../reference/spiro.html">spiro()</a></code> will look for information on body weight in the meta data of the original data file. If for some reason no or the wrong weight is present in the raw data file, <code>weight</code> can be manually given as an argument in <code><a href="../reference/spiro.html">spiro()</a></code> or with <code>add_weight</code>.</p>
+<p>The <code>spiro</code> package calculates parameters relative to body weight. Per default <code><a href="../reference/spiro.html">spiro()</a></code> will look for information on body weight in the meta data of the original data file. If for some reason no or the wrong weight is present in the raw data file, <code>weight</code> can be manually given as an argument in <code><a href="../reference/spiro.html">spiro()</a></code> or with <code><a href="../reference/add_weight.html">add_weight()</a></code>.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># set body weight as an argument in `spiro()`</span>
 <span class="va">s</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/spiro.html">spiro</a></span><span class="op">(</span><span class="va">file</span>, weight <span class="op">=</span> <span class="fl">68.3</span><span class="op">)</span>
