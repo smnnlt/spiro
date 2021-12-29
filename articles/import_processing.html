@@ -173,6 +173,17 @@
   <span class="fu"><a href="../reference/add_protocol.html">add_protocol</a></span><span class="op">(</span><span class="va">protocol</span><span class="op">)</span> |&gt;
   <span class="fu"><a href="../reference/add_hr.html">add_hr</a></span><span class="op">(</span>hr_file <span class="op">=</span> <span class="fu"><a href="../reference/spiro_example.html">spiro_example</a></span><span class="op">(</span><span class="st">"hr_ramp.tcx"</span><span class="op">)</span>, hr_offset <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></code></pre></div>
 </div>
+<div class="section level3">
+<h3 id="use-breath-by-breath-data">Use breath-by-breath data!<a class="anchor" aria-label="anchor" href="#use-breath-by-breath-data"></a>
+</h3>
+<p>We highly recommended to import only raw breath-by-breath data for several reasons:</p>
+<ul>
+<li>Prior averaging or interpolation happens outside of R and is therefore a non-reproducible data processing step.</li>
+<li>If no data for single breaths is available, some functionality of summary functions (e.g. breath averaging for VO2max determination) is lost.</li>
+<li>Prior processing usually leads to data containing less data points, which hinders the automated guessing of exercise protocols based on the available load data.</li>
+</ul>
+<p>If you use a metabolic carts that measures, but does not output data on a breath-by-breath basis, read the manufacturer’s instruction on how to export the raw data in such a way. Data from other systems (mixed chamber) can still be processed with the <code>spiro</code>-package, but protocol guesses and summary calculations have to be treated with caution.</p>
+</div>
 </div>
 <div class="section level2">
 <h2 id="metabolic-carts">Supported metabolic carts<a class="anchor" aria-label="anchor" href="#metabolic-carts"></a>
@@ -184,11 +195,10 @@
 <li>
 <strong>COSMED</strong> (<code>"cosmed"</code>): .xlsx or .xls files in English or German language</li>
 <li>
-<strong>VYNTUS</strong> (<code>"vyntus"</code>): .txt files (tab-seperated) in German language</li>
+<strong>VYNTUS</strong> (<code>"vyntus"</code>): .txt files (tab-separated) in German language</li>
 <li>
 <strong>ZAN</strong> (<code>"zan"</code>): .dat files, usually with the name "EXED*" in German language</li>
 </ul>
-<p>It is highly recommended to import only raw breath-by-breath data to analyze all available data and avoid the duplication of interpolation processes.</p>
 <p>To only import the data without further processing (such as interpolation) use the function <code><a href="../reference/spiro_import.html">spiro_import()</a></code>:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/spiro_import.html">spiro_import</a></span><span class="op">(</span><span class="va">file</span>, device <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
