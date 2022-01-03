@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">spiro</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.2</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,19 +57,34 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="development version" id="spiro-development-version">spiro (development version)<a class="anchor" aria-label="anchor" href="#spiro-development-version"></a></h2>
-<ul><li>Improved protocol guessing</li>
-<li>spiro() now checks if the imported raw data is breath-by-breath and displays a warning if this is not the case</li>
-<li>Improved import for Cosmed files (thanks to Yannick Schwarz)</li>
-<li>new function: Import of Vyntus files (thanks to Daniel Appelhans)</li>
-<li>spiro now supports the import of Cortex xml files (thanks to Sebastian Mühlenhoff, Adrian Swoboda &amp; Andreas Wagner)</li>
-<li>add_protocol() and related function now support unusually short protocols and have an improved input validation</li>
-<li>Created the option to use smoothing in spiro_max() over a number of breaths instead of time interval</li>
-<li>Added duration column to spiro_summary() output</li>
-<li>Fixed bug in Cosmed import causing problems in visualization</li>
-<li>Fixed bug in ZAN import leading to incorrect protocol detection in rare cases</li>
-<li>Improved README and CITATION file</li>
+<h2 class="pkg-version" data-toc-text="0.0.2" id="spiro-002-2022-01-03">spiro 0.0.2 (2022-01-03)<a class="anchor" aria-label="anchor" href="#spiro-002-2022-01-03"></a></h2>
+<div class="section level4">
+<h4 id="new-features-0-0-2">NEW FEATURES<a class="anchor" aria-label="anchor" href="#new-features-0-0-2"></a></h4>
+<ul><li>spiro() now supports the import of Cortex xml and Vyntus files (thanks to Daniel Appelhans, Sebastian Mühlenhoff, Adrian Swoboda &amp; Andreas Wagner)</li>
+<li>spiro_max() can now smooth over a defined number of breaths (and not only time frame)</li>
 </ul></div>
+<div class="section level4">
+<h4 id="minor-improvements-0-0-2">MINOR IMPROVEMENTS<a class="anchor" aria-label="anchor" href="#minor-improvements-0-0-2"></a></h4>
+<ul><li>Improved import for Cosmed files (thanks to Yannick Schwarz)</li>
+<li>Improved protocol guessing</li>
+<li>spiro() now checks if the imported raw data is breath-by-breath and displays a warning if this is not the case</li>
+<li>spiro(file, protocol = NA) is now possible to avoid automated protocol guessing without specifying a protocol</li>
+<li>add_protocol() and related function now support unusually short protocols and have an improved input validation</li>
+<li>Output data frames of spiro_summary() now contain a ‘load’ column</li>
+<li>Increased test coverage</li>
+</ul></div>
+<div class="section level4">
+<h4 id="bug-fixes-0-0-2">BUG FIXES<a class="anchor" aria-label="anchor" href="#bug-fixes-0-0-2"></a></h4>
+<ul><li>Fix bug in Cosmed import causing problems in visualization</li>
+<li>Fix bug in ZAN import leading to incorrect protocol detection in rare cases</li>
+<li>Fix bug in set_protocol_manual() when input was a data frame</li>
+<li>Fix bug in add_weight() that lead to calculation of RE for cycling protocols</li>
+</ul></div>
+<div class="section level4">
+<h4 id="documentation-fixes-0-0-2">DOCUMENTATION FIXES<a class="anchor" aria-label="anchor" href="#documentation-fixes-0-0-2"></a></h4>
+<ul><li>Improved README and CITATION file</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.1" id="spiro-001-2021-11-24">spiro 0.0.1 (2021-11-24)<a class="anchor" aria-label="anchor" href="#spiro-001-2021-11-24"></a></h2>
 <div class="section level4">
