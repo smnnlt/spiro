@@ -35,7 +35,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div id="navbar" class="collapse navbar-collapse ms-2">
+    <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
 <li class="active nav-item">
   <a class="nav-link" href="index.html">
@@ -84,7 +84,7 @@
 </h2>
 <p>This R package offers a fast, standardized and reproducible workflow for data from cardiopulmonary exercise testing. It offers tools for data import, processing, summary and visualization.</p>
 <blockquote>
-<p>WARNING: This package is currently under development. At the moment, I recommend to use it for demonstration or testing purposes only. When using <code>spiro</code> for scientific analyses, make sure to state the exact package version, as at this stage of development the package’s functions may undergo major changes.</p>
+<p>WARNING: This package is currently under active development. At the moment, I recommend to use it for demonstration or testing purposes only. When using <code>spiro</code> for scientific analyses, make sure to state the exact package version, as at this stage of development the package’s functions may undergo major changes.</p>
 </blockquote>
 </div>
 <div class="section level2">
@@ -155,6 +155,10 @@
 <span class="co">#&gt; 9  222.21 0.95 4.68 0.37</span>
 <span class="co">#&gt; 10 222.12 0.98 5.82 0.12</span>
 
+<span class="fu"><a href="reference/spiro_max.html">spiro_max</a></span><span class="op">(</span><span class="va">gxt_data</span><span class="op">)</span>
+<span class="co">#&gt;       VO2    VCO2 VO2_rel     VE  RER HR</span>
+<span class="co">#&gt; 1 4732.28 4640.75    71.7 129.62 1.14 NA</span>
+
 <span class="fu"><a href="reference/spiro_plot.html">spiro_plot</a></span><span class="op">(</span><span class="va">gxt_data</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-example-1.png" width="100%"></p>
 </div>
@@ -170,7 +174,7 @@
 <span class="co">#&gt;   Testing. R package version 0.0.2.9000. DOI: 10.5281/zenodo.1040727.</span>
 <span class="co">#&gt;   https://smnnlt.github.io/spiro/</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Ein BibTeX-Eintrag für LaTeX-Benutzer ist</span>
+<span class="co">#&gt; A BibTeX entry for LaTeX users is</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;   @Manual{,</span>
 <span class="co">#&gt;     title = {spiro: Manage Data from Cardiopulmonary Exercise Testing},</span>
@@ -233,8 +237,9 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
+<li><a href="https://www.repostatus.org/#wip" class="external-link"><img src="https://www.repostatus.org/badges/latest/wip.svg" alt="Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public."></a></li>
 <li><a href="https://CRAN.R-project.org/package=spiro" class="external-link"><img src="https://www.r-pkg.org/badges/version/spiro" alt="CRAN status"></a></li>
+<li><a href="https://zenodo.org/badge/latestdoi/354232342" class="external-link"><img src="https://zenodo.org/badge/354232342.svg" alt="DOI"></a></li>
 <li><a href="https://github.com/smnnlt/spiro/actions" class="external-link"><img src="https://github.com/smnnlt/spiro/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://codecov.io/gh/smnnlt/spiro" class="external-link"><img src="https://codecov.io/gh/smnnlt/spiro/branch/main/graph/badge.svg" alt="codecov"></a></li>
 </ul>
@@ -251,7 +256,7 @@
 
 <div class="pkgdown-footer-right">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
     </footer>
