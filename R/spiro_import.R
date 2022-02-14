@@ -38,6 +38,7 @@ spiro_import <- function(file, device = NULL, anonymize = TRUE) {
     cosmed = spiro_import_cosmed(file),
     cortex = spiro_import_cortex(file),
     vyntus = spiro_import_vyntus(file),
+    jaeger = spiro_import_jaeger(file),
     stop("Could not find device type. Please specify the 'device' argument")
   )
   if (anonymize) {
@@ -175,6 +176,11 @@ guess_device <- function(file) {
     )
     ) {
       device <- "cortex"
+    } else if (
+      any(head == "Name:", na.rm = TRUE) &
+        any(head == "Vorname:", na.rm = TRUE)
+    ) {
+      device <- "jaeger"
     } else { # device type not found
       device <- "none"
     }
@@ -446,6 +452,72 @@ spiro_import_vyntus <- function(file) {
   df
 }
 
+#' Import raw data from Jaeger spiroergometric devices
+#'
+#' \code{spiro_import_jaeger()} retrieves cardiopulmonary data from Jaeger
+#' metabolic cart files.
+#'
+#' @param file A character string, giving the path of the data file.
+#'
+#' @return A \code{data.frame} with data. The attribute \code{info} contains
+#'   addition meta-data retrieved from the original file.
+
+spiro_import_jaeger <- function(file) {
+  # get data
+  d <- as.data.frame(
+    suppressMessages(readxl::read_excel(file, col_names = FALSE))
+  )
+
+  # get meta data
+
+  # find begin of raw data
+  # -- TO DO ---
+  # This is currently only working for files in German language. Further raw
+  # data files are needed to validate Jaeger import
+
+  if (any(d[, 1] == "Zeit", na.rm = TRUE)) {
+    data_start <- which(d[, 1] == "Zeit")
+    if (length(data_start) == 1) data_start <- c(data_start, nrow(d))
+  } else {
+    stop("Error in data import.")
+  }
+
+  meta_raw <- d[1:(data_start[1] - 1), ]
+  info <- data.frame(
+    name = get_meta(meta_raw, "Name:"),
+    surname = get_meta(meta_raw, "Nachname:"),
+    birthday = get_meta(meta_raw, "Geburtsdatum:"),
+    sex = get_sex(get_meta(meta_raw, "Geschlecht:")),
+    height = to_number(get_meta(meta_raw[, 3:ncol(meta_raw)], "Gr\u201d\u00e1e:")),
+    weight = to_number(get_meta(meta_raw[, 3:ncol(meta_raw)], "Gewicht:"))
+  )
+  # Replace missing values with NAs
+  info <- replace(info, which(info == ""), NA)
+
+  data <- d[(data_start[1] + 3):(data_start[2] - 2), ]
+  names(data) <- d[data_start[1], ]
+
+  df <- data.frame(
+    time = to_seconds(data[["Zeit"]]),
+    VO2 = get_data(data, "V'O2"),
+    VCO2 = get_data(data, "V'CO2"),
+    RR = NA,
+    VT = NA,
+    VE = get_data(data, "V'E"),
+    HR = get_data(data, "HR"),
+    load = get_data(data, "Watt"),
+    PetO2 = get_data(data, "PETO2"),
+    PetCO2 = get_data(data, "PET/CO2")
+  )
+
+  # Write null values in HR as NAs
+  df$HR[which(df$HR == 0)] <- NA
+
+  attr(df, "info") <- info # write meta data
+  class(df) <- c("spiro", "data.frame") # create spiro class
+  df
+}
+
 #' Convert sex to factor level
 #'
 #' \code{get_sex()} is a helper function to retrieve the correct sex from file
@@ -497,9 +569,7 @@ to_number <- function(chr) {
 #' data row as a given expression.
 #'
 #' @param data A data.frame containing the data
-#' @param name An expression. The metadata's name which has to be searched for.
-#' @param column A numeric value, specifying the column from which the data
-#'   should be taken
+#' @param expr An expression. The metadata's name which has to be searched for.
 #'
 #' @return A character string.
 #' @noRd
