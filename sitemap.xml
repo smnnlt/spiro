@@ -40,7 +40,13 @@
     <loc>https://smnnlt.github.io/spiro/reference/add_weight.html</loc>
   </url>
   <url>
+    <loc>https://smnnlt.github.io/spiro/reference/bw_filter.html</loc>
+  </url>
+  <url>
     <loc>https://smnnlt.github.io/spiro/reference/get_features.html</loc>
+  </url>
+  <url>
+    <loc>https://smnnlt.github.io/spiro/reference/get_id.html</loc>
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/get_protocol.html</loc>
@@ -56,6 +62,9 @@
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/knit_print.spiro.html</loc>
+  </url>
+  <url>
+    <loc>https://smnnlt.github.io/spiro/reference/print.spiro.html</loc>
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/set_protocol.html</loc>
@@ -95,6 +104,9 @@
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/spiro_plot.html</loc>
+  </url>
+  <url>
+    <loc>https://smnnlt.github.io/spiro/reference/spiro_smooth.html</loc>
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/spiro_summary.html</loc>

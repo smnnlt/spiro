@@ -158,8 +158,8 @@
 <p>For some types of exercise tests it may be preferable to get maximal values of the measured parameters. <code><a href="../reference/spiro_max.html">spiro_max()</a></code> calculates these after smoothing the data.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/spiro_max.html">spiro_max</a></span><span class="op">(</span><span class="va">gxt_data</span>, smooth <span class="op">=</span> <span class="fl">30</span><span class="op">)</span>
-<span class="co">#&gt;       VO2    VCO2 VO2_rel     VE  RER HR</span>
-<span class="co">#&gt; 1 4732.28 4640.75    71.7 129.62 1.14 NA</span></code></pre></div>
+<span class="co">#&gt;       VO2    VCO2     VE VO2_rel HR</span>
+<span class="co">#&gt; 1 4732.28 4640.75 129.62    71.7 NA</span></code></pre></div>
 <p>The <code>smooth</code> argument controls the interval and method for the data smoothing. Smoothing happens by the calculation of a rolling average either over a fixed time interval (e.g. <code>smooth = 30</code> for 30 seconds), or over a fixed number of breaths (e.g. <code>smooth = "30b"</code> for 30 breaths). Per default the smoothing will not apply to the heart rate values, but you can enable this behavior with <code>hr_smooth = TRUE</code>.</p>
 </div>
 <div class="section level2">

@@ -67,7 +67,7 @@ from <code><a href="spiro.html">spiro</a></code> within <code>knitr</code>.</p>
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="co"># S3 method for spiro</span>
-<span class="fu">knit_print</span><span class="op">(</span><span class="va">x</span>, min <span class="op">=</span> <span class="fl">10</span>, max <span class="op">=</span> <span class="fl">20</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+<span class="fu">knit_print</span><span class="op">(</span><span class="va">x</span>, min <span class="op">=</span> <span class="fl">10</span>, max <span class="op">=</span> <span class="fl">20</span>, digits <span class="op">=</span> <span class="fl">2</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -80,6 +80,8 @@ be limited in printing if row number exceed <code>max</code>.</p></dd>
 <dt>max</dt>
 <dd><p>An integer, setting the maximal number of rows to be not cut to
 <code>min</code> in printing.</p></dd>
+<dt>digits</dt>
+<dd><p>An integer giving the number of decimals to be rounded to.</p></dd>
 <dt>...</dt>
 <dd><p>Passing of additional arguments to <code>knit_print.default()</code>.</p></dd>
 </dl></div>

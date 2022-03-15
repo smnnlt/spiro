@@ -59,6 +59,13 @@
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="development version" id="spiro-development-version">spiro (development version)<a class="anchor" aria-label="anchor" href="#spiro-development-version"></a></h2>
 <ul><li>Improved README</li>
+<li>Fix bug for Cosmed meta data import, reading age instead of birthday</li>
+<li>Meta data is now anonymized during import. This can be disabled by using spiro(anonymize = FALSE) (new dependency: digest)</li>
+<li>Cortex import now works for files in English language (thanks to Sebastian Mühlenhoff)</li>
+<li>Write internal function for moving averages (removes zoo dependency)</li>
+<li>the package now provides different filters for data smoothing (time-based, breath-based, Butterworth) in spiro_max() and spiro_plot(). spiro_plot() now uses a zero-lag Butterworth filter as default smoothing method.</li>
+<li>Create a print method for spiro objects to print rounded data</li>
+<li>Improved plotting</li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.2" id="spiro-002-2022-01-03">spiro 0.0.2 (2022-01-03)<a class="anchor" aria-label="anchor" href="#spiro-002-2022-01-03"></a></h2>
