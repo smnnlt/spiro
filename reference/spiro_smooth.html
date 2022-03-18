@@ -69,30 +69,29 @@ Provides the data filtering for <code><a href="spiro_max.html">spiro_max</a></co
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">spiro_smooth</span><span class="op">(</span><span class="va">data</span>, smooth <span class="op">=</span> <span class="fl">30</span>, rawsource <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">spiro_smooth</span><span class="op">(</span><span class="va">data</span>, smooth <span class="op">=</span> <span class="fl">30</span>, columns <span class="op">=</span> <span class="cn">NULL</span>, quiet <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>data</dt>
-<dd><p>A numeric vector or data frame with numeric vectors as columns.
-Usually (a subset of) the output of <code><a href="spiro.html">spiro</a></code>.</p></dd>
+<dd><p>A data frame of the class <code>spiro</code>. Usually the output of
+the <code><a href="spiro.html">spiro</a> function</code>.</p></dd>
 <dt>smooth</dt>
 <dd><p>An integer or character string specifying the smoothing
 strategy and parameters. Default is <code>30</code>, which means the applied
 filter is a 30-second moving average. See the section
 <strong>'Filtering Methods'</strong> for more details.</p></dd>
-<dt>rawsource</dt>
-<dd><p>A data frame of the class <code>spiro</code> (as given by the
-<code><a href="spiro.html">spiro</a></code> function) as additional data source for raw breath
-data, when this is not included in the <code>data</code> argument. This argument
-is only needed when a breath-based moving average is used as filtering
-method.</p></dd>
+<dt>columns</dt>
+<dd><p>A character vector of the data columns that should be
+filtered. By default the filtering applies to all data column of
+<code>data</code> (besides load, time and step).</p></dd>
+<dt>quiet</dt>
+<dd><p>Whether warning message should be suppressed. Default is FALSE.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A numeric vector (if input was a vector) or a data frame (if input
-was a data frame or a list of vectors) of the same length as the input</p>
+    <p>A data frame</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
@@ -101,10 +100,8 @@ biological breath-to-breath variability. When processing or visualizing the
 gas exchange data, it is often helpful to filter the raw data. This function
 provides different filtering methods (time average, breath average, digital
 filters).</p>
-<p>The function is vectorized. The input can be either a numeric vectors or a
-data frame. Its functionality is the basis for the evaluation of the
-<code>smooth</code> argument in <code><a href="spiro_max.html">spiro_max</a></code> and
-<code><a href="spiro_plot.html">spiro_plot</a></code>.</p>
+<p>Breath-based and digital filters will be applied on the raw breath-by-breath
+data. Time-based averages will be conducted on the interpolated data.</p>
     </div>
     <div class="section level2">
     <h2 id="filtering-methods">Filtering Methods<a class="anchor" aria-label="anchor" href="#filtering-methods"></a></h2>
@@ -119,10 +116,7 @@ calculation interval in seconds.</p></dd>
 <dt>Breath-Based Average (e.g. <code>smooth = "15b"</code>)</dt>
 <dd><p>A (centered)
 moving average over a defined number of breaths. The integer before the
-letter 'b' defines the number of breaths for the calculation interval.
-Note that when using a breath-based average, an object of class
-<code>spiro</code> containing the raw breath data as the <code>raw</code> attribute
-has to be set as the <code>rawsource</code> argument.</p></dd>
+letter 'b' defines the number of breaths for the calculation interval.</p></dd>
 
 <dt>Butterworth filter (e.g. <code>smooth = "0.04f3"</code>)</dt>
 <dd><p>A digital
