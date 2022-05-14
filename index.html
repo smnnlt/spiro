@@ -78,14 +78,11 @@
 <div class="page-header"><h1 id="spiro-">spiro <img src="reference/figures/spiro_logo.png" align="right" width="160"><a class="anchor" aria-label="anchor" href="#spiro-"></a>
 </h1></div>
 <!-- badges: start -->
-
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
 <p>This R package offers a fast, standardized and reproducible workflow for data from cardiopulmonary exercise testing. It offers tools for data import, processing, summary and visualization.</p>
-<blockquote>
-<p>WARNING: This package is currently under active development. At the moment, I recommend to use it for demonstration or testing purposes only. When using <code>spiro</code> for scientific analyses, make sure to state the exact package version, as at this stage of development the package’s functions may undergo major changes.</p>
-</blockquote>
+<blockquote><p>WARNING: This package is currently under active development. At the moment, I recommend to use it for demonstration or testing purposes only. When using <code>spiro</code> for scientific analyses, make sure to state the exact package version, as at this stage of development the package’s functions may undergo major changes.</p></blockquote>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -102,10 +99,17 @@
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
+<p>Main functions:</p>
 <ul>
 <li>Use <code><a href="reference/spiro.html">spiro()</a></code> to automatically import and process raw data from cardiopulmonary exercise testing.</li>
 <li>Use <code><a href="reference/spiro_summary.html">spiro_summary()</a></code> and <code><a href="reference/spiro_max.html">spiro_max()</a></code> for a stepwise summary or the calculation of maximum parameter values.</li>
 <li>Use <code><a href="reference/spiro_plot.html">spiro_plot()</a></code> to visualize the data.</li>
+</ul>
+<p>Further functionality:</p>
+<ul>
+<li>Add external heart rate data from a .tcx file.</li>
+<li>Automated guessing or manual setting of exercise protocols.</li>
+<li>Different data filtering strategies for VO<sub>2max</sub> determination (moving time averages, moving breath averages, Butterworth filters)</li>
 </ul>
 <div class="section level4">
 <h4 id="metabolic-carts">Metabolic Carts<a class="anchor" aria-label="anchor" href="#metabolic-carts"></a>
@@ -261,7 +265,7 @@
 
 <div class="pkgdown-footer-right">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
     </footer>

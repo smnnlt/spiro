@@ -155,12 +155,12 @@
 <div class="section level2">
 <h2 id="maximal-parameter-values-with-spiro_max">Maximal parameter values with <code>spiro_max()</code><a class="anchor" aria-label="anchor" href="#maximal-parameter-values-with-spiro_max"></a>
 </h2>
-<p>For some types of exercise tests it may be preferable to get maximal values of the measured parameters. <code><a href="../reference/spiro_max.html">spiro_max()</a></code> calculates these after smoothing the data.</p>
+<p>For some types of exercise tests it may be preferable to get maximal values of the measured parameters (e.g., the maximum oxygen uptake VO<sub>2max</sub>). <code><a href="../reference/spiro_max.html">spiro_max()</a></code> calculates these after smoothing the data.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/spiro_max.html">spiro_max</a></span><span class="op">(</span><span class="va">gxt_data</span>, smooth <span class="op">=</span> <span class="fl">30</span><span class="op">)</span>
-<span class="co">#&gt;       VO2    VCO2     VE VO2_rel HR</span>
-<span class="co">#&gt; 1 4732.28 4640.75 129.62    71.7 NA</span></code></pre></div>
-<p>The <code>smooth</code> argument controls the interval and method for the data smoothing. Smoothing happens by the calculation of a rolling average either over a fixed time interval (e.g. <code>smooth = 30</code> for 30 seconds), or over a fixed number of breaths (e.g. <code>smooth = "30b"</code> for 30 breaths). Per default the smoothing will not apply to the heart rate values, but you can enable this behavior with <code>hr_smooth = TRUE</code>.</p>
+<span class="co">#&gt;       VO2    VCO2     VE VO2_rel  RER HR</span>
+<span class="co">#&gt; 1 4732.28 4640.75 129.62    71.7 0.99 NA</span></code></pre></div>
+<p>The <code>smooth</code> argument controls the interval and method for the data smoothing. Different smoothing methods are available: Moving averages over fixed time intervals (e.g. <code>smooth = 30</code> for 30 seconds), moving averages over a fixed number of breaths (e.g. <code>smooth = "30b"</code> for 30 breaths) or digital filters (e.g. <code>smooth = "0.04fz3"</code> for a third-order zero-phase low-pass Butterworth filter with a cut-off frequency of 0.04 Hz). Per default the smoothing will not apply to the heart rate values, but you can enable this behavior with <code>hr_smooth = TRUE</code>.</p>
 </div>
 <div class="section level2">
 <h2 id="plotting-the-data">Plotting the data<a class="anchor" aria-label="anchor" href="#plotting-the-data"></a>
@@ -178,10 +178,10 @@
 <code class="sourceCode R"><span class="co"># Plot only V-Slope (Panel 5) and VO2/VCO2 over time (Panel 3)</span>
 <span class="fu"><a href="../reference/spiro_plot.html">spiro_plot</a></span><span class="op">(</span><span class="va">data</span>, which <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5</span>,<span class="fl">3</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><img src="summarizing_plotting_files/figure-html/spiro_plot-select-1.png" width="90%" style="display: block; margin: auto;"></p>
-<p>Data over time (Panel 1,2,3,6,8,9) will be displayed as a smoothing average over an interval set in the <code>smooth</code> argument. The other panels (4,5,7) use the initial raw data for visualization.</p>
+<p>Data over time (Panel 1,2,3,6,8,9) will be displayed as a smoothing average over an interval set in the <code>smooth</code> argument. The other panels (4,5,7) use the raw breath-by-breath data for visualization.</p>
 <p>You can control the appearance of the plots in <code><a href="../reference/spiro_plot.html">spiro_plot()</a></code>. Use the <code>base_size</code> argument to change the plot base size. Pass other style arguments to <code>ggplot::theme()</code> for further customization.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Change base size and </span>
+<code class="sourceCode R"><span class="co"># Change base size and axis label font</span>
 <span class="fu"><a href="../reference/spiro_plot.html">spiro_plot</a></span><span class="op">(</span><span class="va">data</span>, base_size <span class="op">=</span> <span class="fl">9</span>, axis.title <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>face <span class="op">=</span> <span class="st">"italic"</span>, colour <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><img src="summarizing_plotting_files/figure-html/spiro_plot-style-1.png" width="90%" style="display: block; margin: auto;"></p>
 </div>
@@ -198,7 +198,7 @@
 
 <div class="pkgdown-footer-right">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
     </footer>
