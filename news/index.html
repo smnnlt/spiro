@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">spiro</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.3.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.4.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,15 +56,24 @@
       <small>Source: <a href="https://github.com/smnnlt/spiro/blob/HEAD/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2"><h2 class="pkg-version" data-toc-text="development version" id="spiro-development-version">spiro (development version)<a class="anchor" aria-label="anchor" href="#spiro-development-version"></a></h2></div>
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="development version" id="spiro-development-version">spiro (development version)<a class="anchor" aria-label="anchor" href="#spiro-development-version"></a></h2>
-<ul><li>Fix bug in Cortex import assigning wrong units in some cases</li>
-<li>Fix bug in Butterworth filter leading to errors in rare cases</li>
-<li>Rewritten spiro_smooth() function has now different arguments. Digital filter now work with the original raw data if possible (and not with the interpolated data).</li>
+<h2 class="pkg-version" data-toc-text="0.0.4" id="spiro-004-2022-05-15">spiro 0.0.4 (2022-05-15)<a class="anchor" aria-label="anchor" href="#spiro-004-2022-05-15"></a></h2>
+<div class="section level4">
+<h4 id="minor-improvements-0-0-4">MINOR IMPROVEMENTS<a class="anchor" aria-label="anchor" href="#minor-improvements-0-0-4"></a></h4>
+<ul><li>spiro_smooth() was rewritten and got new arguments. Digital filters in spiro_smooth() now work with the original raw data if possible (and not with the interpolated data).</li>
 <li>spiro_max() output now also includes RERmax</li>
-<li>Fix bug: ‘signal’ is now a hard dependency</li>
-<li>Improved README, vignettes and documentation</li>
 </ul></div>
+<div class="section level4">
+<h4 id="bug-fixes-0-0-4">BUG FIXES<a class="anchor" aria-label="anchor" href="#bug-fixes-0-0-4"></a></h4>
+<ul><li>‘signal’ is now a hard dependency</li>
+<li>Fix bug in Cortex import assigning wrong units in some cases</li>
+<li>Fix bug in Butterworth filter leading to errors in rare cases</li>
+</ul></div>
+<div class="section level4">
+<h4 id="documentation-fixes-0-0-4">DOCUMENTATION FIXES<a class="anchor" aria-label="anchor" href="#documentation-fixes-0-0-4"></a></h4>
+<ul><li>Improved README, vignettes and documentations</li></ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.3" id="spiro-003-2022-03-15">spiro 0.0.3 (2022-03-15)<a class="anchor" aria-label="anchor" href="#spiro-003-2022-03-15"></a></h2>
 <div class="section level4">

@@ -28,7 +28,7 @@
     
     <a class="navbar-brand me-2" href="index.html">spiro</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.3.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.4.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,16 +85,21 @@
 <blockquote><p>WARNING: This package is currently under active development. At the moment, I recommend to use it for demonstration or testing purposes only. When using <code>spiro</code> for scientific analyses, make sure to state the exact package version, as at this stage of development the package’s functions may undergo major changes.</p></blockquote>
 </div>
 <div class="section level2">
+<h2 id="background">Background<a class="anchor" aria-label="anchor" href="#background"></a>
+</h2>
+<p>Measuring gas exchange during physical exercise is a common procedure in sports science and medicine. It allows to assess the functional limit of the cardiovascular system, evaluate the success of training interventions, and diagnose cardio-respiratory diseases. The measuring devices of cardiopulmonary exercise testing — so-called metabolic carts — output their data in different formats. Moreover, measured breath-by-breath data is noisy and requires post-processing. This package standardizes the import and processing of raw data from different metabolic carts.</p>
+</div>
+<div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>Install the current development version from GitHub:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va"><a href="https://remotes.r-lib.org" class="external-link">remotes</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span>
 <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"smnnlt/spiro"</span><span class="op">)</span></code></pre></div>
-<p>Install the latest version 0.0.3 release by running this code:</p>
+<p>Install the latest version 0.0.4 release by running this code:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va"><a href="https://remotes.r-lib.org" class="external-link">remotes</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"smnnlt/spiro@v0.0.3"</span><span class="op">)</span></code></pre></div>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"smnnlt/spiro@v0.0.4"</span><span class="op">)</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
@@ -121,6 +126,7 @@
 <li>Vyntus</li>
 <li>ZAN</li>
 </ul>
+<p>Support for further metabolic carts is planned for future releases.</p>
 </div>
 </div>
 <div class="section level2">
@@ -160,8 +166,8 @@
 <span class="co">#&gt; 10 222.12 0.98 5.82 0.12</span>
 
 <span class="fu"><a href="reference/spiro_max.html">spiro_max</a></span><span class="op">(</span><span class="va">gxt_data</span><span class="op">)</span>
-<span class="co">#&gt;       VO2    VCO2     VE VO2_rel HR</span>
-<span class="co">#&gt; 1 4732.28 4640.75 129.62    71.7 NA</span>
+<span class="co">#&gt;       VO2    VCO2     VE VO2_rel  RER HR</span>
+<span class="co">#&gt; 1 4732.28 4640.75 129.62    71.7 0.99 NA</span>
 
 <span class="fu"><a href="reference/spiro_plot.html">spiro_plot</a></span><span class="op">(</span><span class="va">gxt_data</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-example-1.png" width="100%"></p>
@@ -175,7 +181,7 @@
 <span class="co">#&gt; To cite spiro in publications use:</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;   Simon Nolte (2022). spiro: Manage Data from Cardiopulmonary Exercise</span>
-<span class="co">#&gt;   Testing. R package version 0.0.3.9000. DOI: 10.5281/zenodo.1040727.</span>
+<span class="co">#&gt;   Testing. R package version 0.0.4. DOI: 10.5281/zenodo.1040727.</span>
 <span class="co">#&gt;   https://smnnlt.github.io/spiro/</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; A BibTeX entry for LaTeX users is</span>
@@ -186,7 +192,7 @@
 <span class="co">#&gt;     year = {2022},</span>
 <span class="co">#&gt;     url = {https://smnnlt.github.io/spiro/},</span>
 <span class="co">#&gt;     doi = {10.5281/zenodo.5816170},</span>
-<span class="co">#&gt;     note = {R package version 0.0.3.9000},</span>
+<span class="co">#&gt;     note = {R package version 0.0.4},</span>
 <span class="co">#&gt;   }</span></code></pre></div>
 </div>
 <div class="section level2">
