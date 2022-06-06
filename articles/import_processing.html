@@ -162,7 +162,7 @@
 <div class="section level3">
 <h3 id="options">Options for data processing<a class="anchor" aria-label="anchor" href="#options"></a>
 </h3>
-<p>You can control the exercise protocol, the calculation of parameters related to body weight and the adding of heart rate data with the arguments of <code><a href="../reference/spiro.html">spiro()</a></code> or with the helper functions <code>add_protocol</code>, <code><a href="../reference/add_weight.html">add_weight()</a></code> and <code><a href="../reference/add_hr.html">add_hr()</a></code> within a piping syntax:</p>
+<p>You can control the exercise protocol, the calculation of parameters related to body weight and the adding of heart rate data with the arguments of <code><a href="../reference/spiro.html">spiro()</a></code> or with the helper functions <code><a href="../reference/add_protocol.html">add_protocol()</a></code>, <code>add_weight()</code> and <code><a href="../reference/add_hr.html">add_hr()</a></code> within a piping syntax:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Note: The Base R pipe requires R version 4.1 or greater</span>
 
@@ -172,7 +172,7 @@
 <span class="op">)</span>
 
 <span class="fu"><a href="../reference/spiro.html">spiro</a></span><span class="op">(</span>file <span class="op">=</span> <span class="fu"><a href="../reference/spiro_example.html">spiro_example</a></span><span class="op">(</span><span class="st">"zan_ramp"</span><span class="op">)</span><span class="op">)</span> |&gt;
-  <span class="fu"><a href="../reference/add_weight.html">add_weight</a></span><span class="op">(</span>weight <span class="op">=</span> <span class="fl">63.4</span><span class="op">)</span> |&gt;
+  <span class="fu"><a href="../reference/add_bodymass.html">add_bodymass</a></span><span class="op">(</span>bodymass <span class="op">=</span> <span class="fl">63.4</span><span class="op">)</span> |&gt;
   <span class="fu"><a href="../reference/add_protocol.html">add_protocol</a></span><span class="op">(</span><span class="va">protocol</span><span class="op">)</span> |&gt;
   <span class="fu"><a href="../reference/add_hr.html">add_hr</a></span><span class="op">(</span>hr_file <span class="op">=</span> <span class="fu"><a href="../reference/spiro_example.html">spiro_example</a></span><span class="op">(</span><span class="st">"hr_ramp.tcx"</span><span class="op">)</span>, hr_offset <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></code></pre></div>
 </div>
@@ -182,10 +182,10 @@
 <p>We highly recommended to import only raw breath-by-breath data for several reasons:</p>
 <ul>
 <li>Prior averaging or interpolation happens outside of R and is therefore a non-reproducible data processing step.</li>
-<li>If no data for single breaths is available, some functionality is lost (e.g. breath-based averaging for VO2max determination).</li>
+<li>If no data for single breaths is available, some functionality of the package is lost (e.g. breath-based averaging for VO_2max_ determination).</li>
 <li>Prior processing usually leads to data containing less data points, which hinders the automated guessing of exercise protocols based on the available load data.</li>
 </ul>
-<p>If you use a metabolic cart that measures, but does not output data on a breath-by-breath basis, read the manufacturer’s instruction on how to export the raw data in such a way. Data from other systems (e.g., mixed chamber) can still be processed with the <code>spiro</code>-package, but protocol guesses and summary calculations have to be treated with caution.</p>
+<p>If you use a metabolic cart that measures, but does not output data on a breath-by-breath basis, read the manufacturer’s instructions on how to export the raw data in such a way. Data from other systems (e.g., most mixing chamber metabolic carts) can still be processed with the <code>spiro</code>-package, but protocol guesses and summary calculations have to be treated with caution.</p>
 </div>
 </div>
 <div class="section level2">
@@ -316,16 +316,16 @@
 </div>
 </div>
 <div class="section level2">
-<h2 id="weight">Modify body weight<a class="anchor" aria-label="anchor" href="#weight"></a>
+<h2 id="bodymass">Modify body mass<a class="anchor" aria-label="anchor" href="#bodymass"></a>
 </h2>
-<p>The <code>spiro</code> package calculates parameters relative to body weight. Per default <code><a href="../reference/spiro.html">spiro()</a></code> will look for information on body weight in the meta data of the original data file. If for some reason no or the wrong weight is present in the raw data file, <code>weight</code> can be manually given as an argument in <code><a href="../reference/spiro.html">spiro()</a></code> or with <code><a href="../reference/add_weight.html">add_weight()</a></code>.</p>
+<p>The <code>spiro</code> package calculates parameters relative to body mass. Per default <code><a href="../reference/spiro.html">spiro()</a></code> will look for information on body mass in the meta data of the original data file. If for some reason no or the wrong body mass is present in the raw data file, <code>bodymass</code> can be manually given as an argument in <code><a href="../reference/spiro.html">spiro()</a></code> or with <code><a href="../reference/add_bodymass.html">add_bodymass()</a></code>.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># set body weight as an argument in `spiro()`</span>
-<span class="va">s</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/spiro.html">spiro</a></span><span class="op">(</span><span class="va">file</span>, weight <span class="op">=</span> <span class="fl">68.3</span><span class="op">)</span>
+<code class="sourceCode R"><span class="co"># set body mass as an argument in `spiro()`</span>
+<span class="va">s</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/spiro.html">spiro</a></span><span class="op">(</span><span class="va">file</span>, bodymass <span class="op">=</span> <span class="fl">68.3</span><span class="op">)</span>
 
-<span class="co"># set body weight using `add_weight()`</span>
+<span class="co"># set body mass using `add_weight()`</span>
 <span class="va">t</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/spiro.html">spiro</a></span><span class="op">(</span><span class="va">file</span><span class="op">)</span> 
-<span class="va">u</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_weight.html">add_weight</a></span><span class="op">(</span><span class="va">t</span>, <span class="fl">68.3</span><span class="op">)</span></code></pre></div>
+<span class="va">u</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_bodymass.html">add_bodymass</a></span><span class="op">(</span><span class="va">t</span>, <span class="fl">68.3</span><span class="op">)</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="heart-rate">Work with external heart rate data<a class="anchor" aria-label="anchor" href="#heart-rate"></a>

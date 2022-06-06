@@ -168,8 +168,7 @@
 <p>The <code>spiro</code> package lets you visualize data from cardiopulmonary exercise testing: With <code><a href="../reference/spiro_plot.html">spiro_plot()</a></code> you can display the traditional Wasserman 9-Panel Plot.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># load example data</span>
-<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/spiro.html">spiro</a></span><span class="op">(</span><span class="fu"><a href="../reference/spiro_example.html">spiro_example</a></span><span class="op">(</span><span class="st">"zan_ramp"</span><span class="op">)</span>, 
-                      hr_file <span class="op">=</span> <span class="fu"><a href="../reference/spiro_example.html">spiro_example</a></span><span class="op">(</span><span class="st">"hr_ramp.tcx"</span><span class="op">)</span><span class="op">)</span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/spiro.html">spiro</a></span><span class="op">(</span><span class="fu"><a href="../reference/spiro_example.html">spiro_example</a></span><span class="op">(</span><span class="st">"zan_ramp"</span><span class="op">)</span>, hr_file <span class="op">=</span> <span class="fu"><a href="../reference/spiro_example.html">spiro_example</a></span><span class="op">(</span><span class="st">"hr_ramp.tcx"</span><span class="op">)</span><span class="op">)</span>
 
 <span class="fu"><a href="../reference/spiro_plot.html">spiro_plot</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></code></pre></div>
 <p><img src="summarizing_plotting_files/figure-html/spiro_plot-1.png" width="90%" style="display: block; margin: auto;"></p>
@@ -178,11 +177,15 @@
 <code class="sourceCode R"><span class="co"># Plot only V-Slope (Panel 5) and VO2/VCO2 over time (Panel 3)</span>
 <span class="fu"><a href="../reference/spiro_plot.html">spiro_plot</a></span><span class="op">(</span><span class="va">data</span>, which <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5</span>,<span class="fl">3</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><img src="summarizing_plotting_files/figure-html/spiro_plot-select-1.png" width="90%" style="display: block; margin: auto;"></p>
-<p>Data over time (Panel 1,2,3,6,8,9) will be displayed as a smoothing average over an interval set in the <code>smooth</code> argument. The other panels (4,5,7) use the raw breath-by-breath data for visualization.</p>
+<p>Data over time (Panel 1,2,3,6,8,9) will be displayed smoothed, as determined via the <code>smooth</code> argument. The other panels (4,5,7) use the raw breath-by-breath data for visualization.</p>
 <p>You can control the appearance of the plots in <code><a href="../reference/spiro_plot.html">spiro_plot()</a></code>. Use the <code>base_size</code> argument to change the plot base size. Pass other style arguments to <code>ggplot::theme()</code> for further customization.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Change base size and axis label font</span>
-<span class="fu"><a href="../reference/spiro_plot.html">spiro_plot</a></span><span class="op">(</span><span class="va">data</span>, base_size <span class="op">=</span> <span class="fl">9</span>, axis.title <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>face <span class="op">=</span> <span class="st">"italic"</span>, colour <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="../reference/spiro_plot.html">spiro_plot</a></span><span class="op">(</span>
+  <span class="va">data</span>, 
+  base_size <span class="op">=</span> <span class="fl">9</span>, 
+  axis.title <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>face <span class="op">=</span> <span class="st">"italic"</span>, colour <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span>
+<span class="op">)</span></code></pre></div>
 <p><img src="summarizing_plotting_files/figure-html/spiro_plot-style-1.png" width="90%" style="display: block; margin: auto;"></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

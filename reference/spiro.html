@@ -69,7 +69,7 @@ metabolic carts into a <code>data.frame</code>.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">spiro</span><span class="op">(</span>
   <span class="va">file</span>,
   device <span class="op">=</span> <span class="cn">NULL</span>,
-  weight <span class="op">=</span> <span class="cn">NULL</span>,
+  bodymass <span class="op">=</span> <span class="cn">NULL</span>,
   hr_file <span class="op">=</span> <span class="cn">NULL</span>,
   hr_offset <span class="op">=</span> <span class="fl">0</span>,
   protocol <span class="op">=</span> <span class="cn">NULL</span>,
@@ -87,8 +87,8 @@ exchange data.</p></dd>
 default the device type is guessed by the characteristics of the
 <code>file</code>. This can be overridden by setting the argument to
 <code>"cortex"</code>, <code>"cosmed"</code>, <code>"vyntus"</code> or <code>"zan"</code>.</p></dd>
-<dt>weight</dt>
-<dd><p>Numeric value for participant's body weight, if the default
+<dt>bodymass</dt>
+<dd><p>Numeric value for participant's body mass, if the default
 value saved in the <code>file</code> should be overridden.</p></dd>
 <dt>hr_file</dt>
 <dd><p>The absolute or relative path of a <code>*tcx</code> file that
@@ -128,12 +128,12 @@ want to skip the automated protocol guessing without providing an
 alternative, set <code>protocol = NA</code>. Note that in this case, some functions
 relying on load data (such as <code><a href="spiro_summary.html">spiro_summary</a></code>) will not work.</p>
 <p>Additional variables of gas exchange are calculated for further analysis. Per
-default the body weight saved in the file's metadata is used for calculating
-relative measures. It is possible to supply <code>weight</code> manually to the
+default the body mass saved in the file's metadata is used for calculating
+relative measures. It is possible to supply <code>bodymass</code> manually to the
 function, overriding that value.</p>
-<p>Protocols, heart rate data and weight information can also be given in a
+<p>Protocols, heart rate data and body mass information can also be given in a
 piping coding style using the functions <code><a href="add_protocol.html">add_protocol</a></code>,
-<code><a href="add_hr.html">add_hr</a></code> and <code><a href="add_weight.html">add_weight</a></code> (see examples).</p>
+<code><a href="add_hr.html">add_hr</a></code> and <code><a href="add_bodymass.html">add_bodymass</a></code> (see examples).</p>
 <p>After processing, you may summarize the resulting data frame with
 <code><a href="spiro_summary.html">spiro_summary</a></code> and <code><a href="spiro_max.html">spiro_max</a></code>, or plot it with
 <code><a href="spiro_plot.html">spiro_plot</a></code>.</p>
@@ -13908,7 +13908,7 @@ piping coding style using the functions <code><a href="add_protocol.html">add_pr
 <span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
 <span class="r-in"><span class="fu">spiro</span><span class="op">(</span><span class="va">file</span><span class="op">)</span> |&gt;</span>
 <span class="r-in">  <span class="fu"><a href="add_hr.html">add_hr</a></span><span class="op">(</span>hr_file <span class="op">=</span> <span class="va">hr_file</span>, hr_offset <span class="op">=</span> <span class="fl">0</span><span class="op">)</span> |&gt;</span>
-<span class="r-in">  <span class="fu"><a href="add_weight.html">add_weight</a></span><span class="op">(</span><span class="fl">68.2</span><span class="op">)</span></span>
+<span class="r-in">  <span class="fu"><a href="add_bodymass.html">add_bodymass</a></span><span class="op">(</span><span class="fl">68.2</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">}</span></span>
 </code></pre></div>
     </div>

@@ -7,6 +7,9 @@
     <loc>https://smnnlt.github.io/spiro/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
+    <loc>https://smnnlt.github.io/spiro/CONTRIBUTING.html</loc>
+  </url>
+  <url>
     <loc>https://smnnlt.github.io/spiro/LICENSE-text.html</loc>
   </url>
   <url>
@@ -31,13 +34,13 @@
     <loc>https://smnnlt.github.io/spiro/news/index.html</loc>
   </url>
   <url>
+    <loc>https://smnnlt.github.io/spiro/reference/add_bodymass.html</loc>
+  </url>
+  <url>
     <loc>https://smnnlt.github.io/spiro/reference/add_hr.html</loc>
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/add_protocol.html</loc>
-  </url>
-  <url>
-    <loc>https://smnnlt.github.io/spiro/reference/add_weight.html</loc>
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/bw_filter.html</loc>
