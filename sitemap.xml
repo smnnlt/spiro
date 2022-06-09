@@ -46,19 +46,10 @@
     <loc>https://smnnlt.github.io/spiro/reference/bw_filter.html</loc>
   </url>
   <url>
-    <loc>https://smnnlt.github.io/spiro/reference/get_features.html</loc>
-  </url>
-  <url>
-    <loc>https://smnnlt.github.io/spiro/reference/get_id.html</loc>
+    <loc>https://smnnlt.github.io/spiro/reference/get_anonid.html</loc>
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/get_protocol.html</loc>
-  </url>
-  <url>
-    <loc>https://smnnlt.github.io/spiro/reference/get_testtype.html</loc>
-  </url>
-  <url>
-    <loc>https://smnnlt.github.io/spiro/reference/guess_device.html</loc>
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/index.html</loc>
@@ -86,21 +77,6 @@
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/spiro_import.html</loc>
-  </url>
-  <url>
-    <loc>https://smnnlt.github.io/spiro/reference/spiro_import_cortex.html</loc>
-  </url>
-  <url>
-    <loc>https://smnnlt.github.io/spiro/reference/spiro_import_cosmed.html</loc>
-  </url>
-  <url>
-    <loc>https://smnnlt.github.io/spiro/reference/spiro_import_vyntus.html</loc>
-  </url>
-  <url>
-    <loc>https://smnnlt.github.io/spiro/reference/spiro_import_zan.html</loc>
-  </url>
-  <url>
-    <loc>https://smnnlt.github.io/spiro/reference/spiro_interpolate.html</loc>
   </url>
   <url>
     <loc>https://smnnlt.github.io/spiro/reference/spiro_max.html</loc>

@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">spiro</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.5</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.5.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,41 +84,48 @@ exercise testing data</dd>
         <dd>Import raw data from spiroergometric devices</dd>
       </dl><dl><dt>
           
-          <code><a href="spiro_import_cortex.html">spiro_import_cortex()</a></code> 
-        </dt>
-        <dd>Import raw data from Cortex spiroergometric devices</dd>
-      </dl><dl><dt>
-          
-          <code><a href="spiro_import_cosmed.html">spiro_import_cosmed()</a></code> 
-        </dt>
-        <dd>Import raw data from COSMED spiroergometric devices</dd>
-      </dl><dl><dt>
-          
-          <code><a href="spiro_import_vyntus.html">spiro_import_vyntus()</a></code> 
-        </dt>
-        <dd>Import raw data from Vyntus spiroergometric devices</dd>
-      </dl><dl><dt>
-          
-          <code><a href="spiro_import_zan.html">spiro_import_zan()</a></code> 
-        </dt>
-        <dd>Import raw data from ZAN spiroergometric devices</dd>
-      </dl><dl><dt>
-          
-          <code><a href="guess_device.html">guess_device()</a></code> 
-        </dt>
-        <dd>Guess the device used for a cardiopulmonary measurement</dd>
-      </dl><dl><dt>
-          
-          <code><a href="spiro_interpolate.html">spiro_interpolate()</a></code> 
-        </dt>
-        <dd>Interpolate spiroergometric data</dd>
-      </dl><dl><dt>
-          
-          <code><a href="get_id.html">get_id()</a></code> 
+          <code><a href="get_anonid.html">get_anonid()</a></code> 
         </dt>
         <dd>Get the anonymization id from personal data</dd>
       </dl></div><div class="section level2">
-      <h2 id="dealing-with-exercise-protocols">Dealing with exercise protocols<a class="anchor" aria-label="anchor" href="#dealing-with-exercise-protocols"></a></h2>
+      <h2 id="working-with-additional-heart-rate-data">Working with additional heart rate data<a class="anchor" aria-label="anchor" href="#working-with-additional-heart-rate-data"></a></h2>
+      
+      
+
+      
+    </div><div id="" class="section level2">
+      
+      
+      
+
+      <dl><dt>
+          
+          <code><a href="add_hr.html">add_hr()</a></code> 
+        </dt>
+        <dd>Import and apply heart rate data to cardiopulmonary exercise testing data</dd>
+      </dl></div><div class="section level2">
+      <h2 id="data-filtering">Data filtering<a class="anchor" aria-label="anchor" href="#data-filtering"></a></h2>
+      
+      
+
+      
+    </div><div id="" class="section level2">
+      
+      
+      
+
+      <dl><dt>
+          
+          <code><a href="spiro_smooth.html">spiro_smooth()</a></code> 
+        </dt>
+        <dd>Apply a smoothing filter to data from cardiopulmonary exercise testing.</dd>
+      </dl><dl><dt>
+          
+          <code><a href="bw_filter.html">bw_filter()</a></code> 
+        </dt>
+        <dd>Smooth data with a (zero-phase) Butterworth filter</dd>
+      </dl></div><div class="section level2">
+      <h2 id="working-with-protocols">Working with protocols<a class="anchor" aria-label="anchor" href="#working-with-protocols"></a></h2>
       
       
 
@@ -140,61 +147,14 @@ exercise testing data</dd>
         <dd>Guess a test protocol from a corresponding exercise testing dataset</dd>
       </dl><dl><dt>
           
-          <code><a href="set_protocol.html">set_protocol()</a></code> <code><a href="set_protocol.html">pre()</a></code> <code><a href="set_protocol.html">wu()</a></code> <code><a href="set_protocol.html">steps()</a></code> <code><a href="set_protocol.html">const()</a></code> 
-        </dt>
-        <dd>Setting an exercise testing profile</dd>
-      </dl><dl><dt>
-          
           <code><a href="set_protocol_manual.html">set_protocol_manual()</a></code> 
         </dt>
         <dd>Manually setting a testing profile</dd>
       </dl><dl><dt>
           
-          <code><a href="get_testtype.html">get_testtype()</a></code> 
+          <code><a href="set_protocol.html">set_protocol()</a></code> <code><a href="set_protocol.html">pt_pre()</a></code> <code><a href="set_protocol.html">pt_wu()</a></code> <code><a href="set_protocol.html">pt_steps()</a></code> <code><a href="set_protocol.html">pt_const()</a></code> 
         </dt>
-        <dd>Guess the type of exercise test protocol</dd>
-      </dl><dl><dt>
-          
-          <code><a href="get_features.html">get_features()</a></code> 
-        </dt>
-        <dd>Extract features from an exercise test protocol</dd>
-      </dl></div><div class="section level2">
-      <h2 id="working-with-additional-heart-rate-data">Working with additional heart rate data<a class="anchor" aria-label="anchor" href="#working-with-additional-heart-rate-data"></a></h2>
-      
-      
-
-      
-    </div><div id="" class="section level2">
-      
-      
-      
-
-      <dl><dt>
-          
-          <code><a href="add_hr.html">add_hr()</a></code> 
-        </dt>
-        <dd>Import and apply heart rate data to cardiopulmonary exercise testing data</dd>
-      </dl></div><div class="section level2">
-      <h2 id="data-filtering">Data Filtering<a class="anchor" aria-label="anchor" href="#data-filtering"></a></h2>
-      
-      
-
-      
-    </div><div id="" class="section level2">
-      
-      
-      
-
-      <dl><dt>
-          
-          <code><a href="spiro_smooth.html">spiro_smooth()</a></code> 
-        </dt>
-        <dd>Apply a smoothing filter to data from cardiopulmonary exercise testing.</dd>
-      </dl><dl><dt>
-          
-          <code><a href="bw_filter.html">bw_filter()</a></code> 
-        </dt>
-        <dd>Smooth data with a (zero-phase) Butterworth filter</dd>
+        <dd>Setting an exercise testing profile</dd>
       </dl></div><div class="section level2">
       <h2 id="summarizing">Summarizing<a class="anchor" aria-label="anchor" href="#summarizing"></a></h2>
       

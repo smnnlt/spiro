@@ -26,7 +26,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">spiro</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.5</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.5.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -167,8 +167,8 @@
 <code class="sourceCode R"><span class="co"># Note: The Base R pipe requires R version 4.1 or greater</span>
 
 <span class="va">protocol</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/set_protocol.html">set_protocol</a></span><span class="op">(</span>
-  <span class="fu"><a href="../reference/set_protocol.html">wu</a></span><span class="op">(</span>duration <span class="op">=</span> <span class="fl">120</span>, load <span class="op">=</span> <span class="fl">50</span><span class="op">)</span>,
-  <span class="fu"><a href="../reference/set_protocol.html">steps</a></span><span class="op">(</span>duration <span class="op">=</span> <span class="fl">30</span>, load <span class="op">=</span> <span class="fl">100</span>, increment <span class="op">=</span> <span class="fl">20</span>, count <span class="op">=</span> <span class="fl">24</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/set_protocol.html">pt_wu</a></span><span class="op">(</span>duration <span class="op">=</span> <span class="fl">120</span>, load <span class="op">=</span> <span class="fl">50</span><span class="op">)</span>,
+  <span class="fu"><a href="../reference/set_protocol.html">pt_steps</a></span><span class="op">(</span>duration <span class="op">=</span> <span class="fl">30</span>, load <span class="op">=</span> <span class="fl">100</span>, increment <span class="op">=</span> <span class="fl">20</span>, count <span class="op">=</span> <span class="fl">24</span><span class="op">)</span>
 <span class="op">)</span>
 
 <span class="fu"><a href="../reference/spiro.html">spiro</a></span><span class="op">(</span>file <span class="op">=</span> <span class="fu"><a href="../reference/spiro_example.html">spiro_example</a></span><span class="op">(</span><span class="st">"zan_ramp"</span><span class="op">)</span><span class="op">)</span> |&gt;
@@ -295,10 +295,10 @@
 <span class="co">#&gt; 9      5.28 NA 0.80 0.19 0.15</span>
 <span class="co">#&gt; 10     5.31 NA 0.80 0.19 0.15</span>
 <span class="co">#&gt; ... with 2999 more rows</span></code></pre></div>
-<p>With <code><a href="../reference/set_protocol.html">set_protocol()</a></code> a protocol can be defined without specifying every single load step. You can paste the pre-defined segment types <code><a href="../reference/set_protocol.html">pre()</a></code>, <code><a href="../reference/set_protocol.html">wu()</a></code>, <code><a href="../reference/set_protocol.html">const()</a></code>and <code><a href="../reference/set_protocol.html">steps()</a></code> into <code><a href="../reference/set_protocol.html">set_protocol()</a></code> in the desired order. The following graph illustrates an example of this practice:</p>
+<p>With <code><a href="../reference/set_protocol.html">set_protocol()</a></code> a protocol can be defined without specifying every single load step. You can paste the pre-defined segment types <code><a href="../reference/set_protocol.html">pt_pre()</a></code>, <code><a href="../reference/set_protocol.html">pt_wu()</a></code>, <code><a href="../reference/set_protocol.html">pt_const()</a></code> and <code><a href="../reference/set_protocol.html">pt_steps()</a></code> into <code><a href="../reference/set_protocol.html">set_protocol()</a></code> in the desired order. The following graph illustrates an example of this practice:</p>
 <p><img src="import_processing_files/figure-html/set_protocol-variables-1.png" width="90%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/set_protocol.html">set_protocol</a></span><span class="op">(</span><span class="fu"><a href="../reference/set_protocol.html">pre</a></span><span class="op">(</span><span class="fl">60</span><span class="op">)</span>, <span class="fu"><a href="../reference/set_protocol.html">wu</a></span><span class="op">(</span><span class="fl">300</span>,<span class="fl">80</span><span class="op">)</span>, <span class="fu"><a href="../reference/set_protocol.html">steps</a></span><span class="op">(</span><span class="fl">180</span>,<span class="fl">100</span>,<span class="fl">25</span>,<span class="fl">6</span>,<span class="fl">30</span><span class="op">)</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="../reference/set_protocol.html">set_protocol</a></span><span class="op">(</span><span class="fu"><a href="../reference/set_protocol.html">pt_pre</a></span><span class="op">(</span><span class="fl">60</span><span class="op">)</span>, <span class="fu"><a href="../reference/set_protocol.html">pt_wu</a></span><span class="op">(</span><span class="fl">300</span>,<span class="fl">80</span><span class="op">)</span>, <span class="fu"><a href="../reference/set_protocol.html">pt_steps</a></span><span class="op">(</span><span class="fl">180</span>,<span class="fl">100</span>,<span class="fl">25</span>,<span class="fl">6</span>,<span class="fl">30</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt;    duration load</span>
 <span class="co">#&gt; 1        60    0</span>
 <span class="co">#&gt; 2       300   80</span>
